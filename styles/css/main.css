@@ -1,0 +1,26 @@
+
+
+body {
+    background-color: #7c7c80;
+    font-family: "Neucha", cursive;
+}
+.footerCaption {
+    text-align: center;
+    margin-bottom: 50px;
+}
+#resetButton {
+    background-color: #16d428;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    height: 56px;
+    width: 234px;
+    border-radius: 28px;
+    border-style: none;
+    margin: 0.75em;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 4.5em;
+    font-family: 'Montserrat Bold', sans-serif;
+    text-transform: uppercase;
+}
