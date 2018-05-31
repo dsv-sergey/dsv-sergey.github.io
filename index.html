@@ -17,16 +17,53 @@
                 <ul class="menu">
                     <li><a href="#calendar" id="calendarLink">Calendar</a></li>
                     <li><a href="#create" id="createLink">Create</a></li>
+                    <li><a href="#about">About</a></li>
                 </ul>
             </nav>
         </header>
         <section class="wrapperPages">
-            <div id="calendarPage"></div>
-            <div id="createPage"></div>
+            <div id="calendar" class="hidden"></div>
+            <div id="create" class="hidden">
+                <form action="" name="reg">
+                    <div style="display: flex; justify-content: center">
+                        <fieldset>
+                            <legend>Configure calendar</legend>
+                            <div style="width: 600px; display: flex; flex-direction: column; justify-content: space-around; align-content: center">
+                                <label><input type="checkbox" id="drive">Allow change month</label>
+                                <label><input type="checkbox" id="dd">Allow add tasks</label>
+                                <label><input type="checkbox" id="dd">Allow remove tasks</label>
+                                <label><input type="checkbox" id="dd">Show month / year</label>
+                                <fieldset><legend>Set month and year</legend>
+                                <select name="age" id="age"></select>
+                                <select name="age" id="age"></select>
+                                </fieldset>
+                                <fieldset><legend>Notes</legend>
+                                    <input type="textarea" id="comment" name="comment" placeholder="Add Note">
+                                </fieldset>
+                                </div>
+                        </fieldset>
+                    </div>
+                </form>
+                <div style="display: flex; justify-content: center; flex-direction: row">
+                    <div id="outputForm" style="flex-direction: row;">
+                        <fieldset>
+                            <legend>Code</legend>
+                            <pre id="code"></pre>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Calendar</legend>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="about" class="hidden"></div>
         </section>
         <footer>
             <article class="footerCaption">Front-End Developer Sergey Dervyannik | Minsk 2018</article>
         </footer>
         <script src="js/script.js"></script>
+        <script src="js/setting.js"></script>
+        <script src+"js/hash.js"></script>
+        <script src="js/select.js"></script>
     </body>
 </html>

@@ -4,7 +4,27 @@ body {
     background-color: #7c7c80;
     font-family: "Neucha", cursive;
 }
+.headerMenu {
+    position: sticky;
+    top: 0;
+    min-height: 4rem;
+}
+.menu li {
+    display: inline;
+    font-size: 3rem;
+    padding: 2rem;
+
+
+}
+.menu a {
+    text-decoration-line: none;
+    text-decoration-color: #fff;
+}
+.headerMenu {
+    margin-top: 
+}
 .footerCaption {
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 50px;
 }

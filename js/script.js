@@ -1,7 +1,7 @@
 var list = localStorage;
 
 calendarLink.onclick = function() {
-  drawInteractiveCalendar('calendarPage');
+  drawInteractiveCalendar('calendar');
 };
 
 function drawInteractiveCalendar(idEl) {
@@ -123,7 +123,7 @@ function drawCalendar(year, month, htmlEl) {
     dayRU = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
     calendar =
       "<h2 style='text-align: center'>Календарь</h2>" +
-      "<table id='myCalendar' style='width: 500px; height: 400px; border-spacing: 1px 1px;' bgcolor='#adff2f' border='1px'>" +
+      "<table id='myCalendar' style='width: 80%; height: width*0.7; border-spacing: 1px 1px;' bgcolor='#adff2f' border='1px'>" +
       "<tr bgcolor='#7fff00'><th>" +
       dayRU[1] +
       '</th><th>' +
