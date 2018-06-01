@@ -8,4 +8,4 @@ function goLink (hash) {
     if (hash == "#about") {
         goToAbout();
     };
-}
+};
