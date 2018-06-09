@@ -3,28 +3,25 @@
 body {
     background-color: #7c7c80;
     font-family: "Neucha", cursive;
+    margin: 0;
+    padding: 0;
+    -webkit-padding: 0;
+    -webkit-margin: 0;
 }
 .headerMenu {
     position: fixed;
     z-index: 100;
     top: 0;
+    left: 0;
     min-height: 3rem;
     width: 100%;
     background-color: #7c7c80;
+    text-align: center;
 }
 .menu li {
     display: inline;
     font-size: 3rem;
     padding: 2rem;
-}
-@media screen and (max-width:800px) {
-    .headerMenu {
-        min-height: auto;
-    }
-    .menu li {
-        font-size: 2rem;
-        padding: 1rem;
-    }
 }
 .menu a {
     text-decoration-line: none;
@@ -54,7 +51,6 @@ footer {
     border-spacing: 1px 1px;
     background-color: rgb(173, 255, 47);
 }
-
 #resetButton {
     background-color: #16d428;
     color: #fff;
@@ -74,3 +70,18 @@ footer {
 .hidden {
     display: none;
 }
+
+/*-------Media Queries----------*/
+
+@media screen and (max-width:800px) {
+    .headerMenu {
+        min-height: auto;
+    }
+    .menu li {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    .footerCaption {
+        font-size: 1rem;
+    }
+}    
