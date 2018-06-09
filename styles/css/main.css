@@ -12,6 +12,15 @@ body {
     width: 100%;
     background-color: #7c7c80;
 }
+@media screen and (max-width:800px) {
+    .headerMenu {
+        min-height: auto;
+    }
+    .menu li {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+}
 .menu li {
     display: inline;
     font-size: 3rem;

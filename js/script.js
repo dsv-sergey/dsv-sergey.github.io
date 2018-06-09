@@ -9,13 +9,25 @@ function goLink () {
         createCalendar( );
     };
     if (location.hash == "#about") {
-        goToAbout();
+        goToAbout('about');
     };
 };
 
 // calendarLink.onclick = function() {
 // 	drawInteractiveCalendar('calendar');
 // };
+function goToAbout(idEl) {
+	var htmlEl = document.getElementById(idEl),
+		elCalendar = document.getElementById('calendar'),
+		elCreate = document.getElementById('create');
+		if (!elCalendar.hasAttribute('class')) {
+			elCalendar.setAttribute('class', 'hidden');
+		}
+		if (!elCreate.hasAttribute('class')) {
+			elCreate.setAttribute('class', 'hidden');
+		}
+	htmlEl.removeAttribute('class', 'hidden');
+}
 
 function drawInteractiveCalendar(idEl) {
   	var htmlEl = document.getElementById(idEl),
