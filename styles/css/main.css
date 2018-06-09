@@ -25,11 +25,23 @@ header {
 }
 .menu a {
     text-decoration-line: none;
-    text-decoration-color: #fff;
+}
+.menu a:hover {
+    color: #fff;
 }
 .wrapperPages {
     margin-top: 6rem;
     top: 6rem;
+}
+#about {
+    text-align: center;
+}
+#about a {
+    font-size: 4rem;
+    text-decoration-line: none;
+}
+#about a:hover {
+    color: azure;
 }
 footer {
     position: fixed; /* Фиксированное положение */

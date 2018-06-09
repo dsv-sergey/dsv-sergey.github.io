@@ -34,6 +34,14 @@ function drawInteractiveCalendar(idEl) {
 		today = new Date(),
 		year = today.getFullYear(),
 		month = today.getMonth() + 1;
+		elAbout = document.getElementById('about'),
+		elCreate = document.getElementById('create');
+		if (!elAbout.hasAttribute('class')) {
+			elAbout.setAttribute('class', 'hidden');
+		}
+		if (!elCreate.hasAttribute('class')) {
+			elCreate.setAttribute('class', 'hidden');
+		}
 	htmlEl.removeAttribute('class', 'hidden');
 	drawCalendar(year, month, htmlEl);
 	addHtmlElements(year, month, htmlEl);
