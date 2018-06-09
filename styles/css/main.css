@@ -25,11 +25,27 @@ body {
     margin-top: 6rem;
     top: 6rem;
 }
+footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0; 
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
 .footerCaption {
+    position: relative;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
+#myCalendar, tbody {
+    width: 100%;
+    min-height: 70%;
+    border: 1px solid black;
+    border-spacing: 1px 1px;
+    background-color: rgb(173, 255, 47);
+}
+
 #resetButton {
     background-color: #16d428;
     color: #fff;
@@ -45,4 +61,7 @@ body {
     line-height: 4.5em;
     font-family: 'Montserrat Bold', sans-serif;
     text-transform: uppercase;
+}
+.hidden {
+    display: none;
 }
