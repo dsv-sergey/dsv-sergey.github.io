@@ -40,7 +40,7 @@ function setDate(x) {
         return month;
     }
 }
-
+// message.onclick = showMessages;
 window.onhashchange = goLink;
 function goLink() {
     if (location.hash == "#calendar") {
@@ -195,51 +195,7 @@ function addHtmlElements(year, month, htmlEl) {
     // 	messages.innerText = "";
     //   };
 
-    function addNote(event) {
-        var target = event.target,
-            parseList = JSON.parse(list.getItem("name")),
-            clickOutput,
-			note = prompt("Введите заметку:") || [],
-			noteText,
-            dayClick = target.innerText,
-            key =
-                ((dayClick < 10 ? "0" + dayClick : dayClick) +
-                "." +
-                (month < 10 ? "0" + month : month) +
-                "." +
-                year) || [],
-            stringKey;
-        if (note == "") {
-            note = "Нет заметок";
-        }
-        if (!parseList.hasOwnProperty('note')) {
-            // parseList['note'] = [];
-            // parseList['note'].push(key);
-            // parseList['note'][key] = [];
-            noteText = parseList;
-            noteText['note'] = noteText['note'] || {};
-            noteText['note'][key] = noteText['note'][key] || [];
-            noteText['note'][key].push(note);
-            // noteText['note'] = {
-            //     [key]: note
-            // };
-            // parseList['note'][key].push(note);
-            list.setItem('name', JSON.stringify(noteText));
-        } else {
-            noteText = parseList;
-            noteText['note'] = noteText['note'] || {};
-            noteText['note'][key] = noteText['note'][key] || [];
-            noteText['note'][key].push(note);
-            list.setItem('name', JSON.stringify(noteText));
-        }
-        clickOutput = document.createElement("p");
-        clickOutput.className = "message";
-        clickOutput.style.cssText = "height: auto; width: auto";
-		clickOutput.innerHTML = key + ": " + note;
-		
-        // var block = document.getElementsByClassName("messages");
-        // block[0].appendChild(clickOutput);
-    }
+   
 }
 
 function drawCalendar(year, month, htmlEl) {

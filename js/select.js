@@ -1,3 +1,6 @@
+/**
+ * @function
+ */
 (function createSetting() {
     var monthList = [
             "Январь",
@@ -20,7 +23,14 @@
     addSelectedElement(monthList, null, null, setMonth);
     addSelectedElement(null, periodYear, step, setYear);
 })();
-
+/**
+ * @function
+ * add elements in select teg
+ * @param {Array} arrayOptions 
+ * @param {Array} setRange 
+ * @param {number} step 
+ * @param {string} idEl 
+ */
 function addSelectedElement(arrayOptions, setRange, step, idEl) {
     var selectedElement = document.getElementById(idEl);
     var content = "";
