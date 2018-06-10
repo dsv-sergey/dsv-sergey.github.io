@@ -1,5 +1,7 @@
 
-
+.grid {
+    display: grid;
+}
 body {
     background-color: #7c7c80;
     font-family: "Neucha", cursive;
@@ -25,13 +27,60 @@ header {
 }
 .menu a {
     text-decoration-line: none;
+    color: black;
 }
 .menu a:hover {
     color: #fff;
 }
 .wrapperPages {
-    margin-top: 6rem;
-    top: 6rem;
+    margin-top: 8rem;
+}
+#calendar {
+    align-content: center;
+
+}
+#myCalendar {
+    margin: auto;
+    width: 90vw;
+    height: 60vh;
+    border: 1px solid black;
+    border-spacing: 1px 1px;
+    background-color: rgb(173, 255, 47);
+    font-size: 2rem;
+}
+th {
+    height: 1.5rem;
+}
+th, td {
+    border: 1px solid black;
+    border-spacing: 1px 1px;
+    text-orientation: sideways-right;
+}
+.day {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.day:hover {
+    background-color: rgb(187, 252, 135);
+}
+#create {
+    font-size: 1.5rem;
+}
+#create select {
+    height: 2rem;
+}
+#create fieldset {
+    border: black solid 2px;
+    padding: 5px;
+}
+.calendarConfig {
+    height: 30vh;
+    width: 70vw;
+}
+.previewCalendar {
+    float: right;
+    width: 50%;
+    height: 50%;
 }
 #about {
     text-align: center;
@@ -39,9 +88,10 @@ header {
 #about a {
     font-size: 4rem;
     text-decoration-line: none;
+    color: black;
 }
 #about a:hover {
-    color: azure;
+    color: #fff;
 }
 footer {
     position: fixed; /* Фиксированное положение */
@@ -55,13 +105,6 @@ footer {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 10px;
-}
-#myCalendar, tbody {
-    width: 100%;
-    min-height: 70%;
-    border: 1px solid black;
-    border-spacing: 1px 1px;
-    background-color: rgb(173, 255, 47);
 }
 #resetButton {
     background-color: #16d428;
@@ -95,5 +138,15 @@ footer {
     }
     .footerCaption {
         font-size: 1rem;
+    }
+    #about {
+        text-align: center;
+    }
+    #about a {
+        font-size: 4rem;
+        text-decoration-line: none;
+    }
+    #about a:hover {
+        color: azure;
     }
 }    

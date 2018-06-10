@@ -26,34 +26,36 @@
         <section class="wrapperPages">
             <div id="calendar" class="hidden"></div>
             <div id="create" class="hidden">
-                <form action="" name="reg">
-                    <div style="display: flex; justify-content: center">
-                        <fieldset>
+                <div class='formCalendarConfig'>
+                    <form action="" name="reg">
+                        <fieldset class="calendarConfig">
                             <legend>Configure calendar</legend>
                             <div style="width: 100%;  display: flex; flex-direction: column; justify-content: space-around; align-content: center">
                                 <label><input type="checkbox" id="drive">Allow change month</label>
                                 <label><input type="checkbox" id="dd">Allow add tasks</label>
                                 <label><input type="checkbox" id="dd">Allow remove tasks</label>
                                 <label><input type="checkbox" id="dd">Show month / year</label>
-                                <fieldset><legend>Set month and year</legend>
-                                <select name="monthSel" id="monthSel"></select>
-                                <select name="year" id="yearSel"></select>
+                                <fieldset>
+                                    <legend>Set month and year</legend>
+                                    <select name="monthSel" id="monthSel"></select>
+                                    <select name="year" id="yearSel"></select>
                                 </fieldset>
-                                <fieldset><legend>Notes</legend>
+                                <fieldset>
+                                    <legend>Notes</legend>
                                     <input type="textarea" id="comment" name="comment" placeholder="Add Note">
                                 </fieldset>
-                                </div>
+                            </div>
                         </fieldset>
-                    </div>
-                </form>
+                    </form>
+                </div>
                 <div style="display: flex; justify-content: center; flex-direction: row">
                     <div id="outputForm" style="flex-direction: row;">
                         <fieldset>
                             <legend>Code</legend>
                             <pre id="code"></pre>
                         </fieldset>
-                        <fieldset>
-                            <legend>Calendar</legend>
+                        <fieldset class="previewCalendar">
+                            <legend>Calendar preview</legend>
                             <div id="preShowCalendar"></div>
                         </fieldset>
                     </div>
@@ -82,7 +84,6 @@
         </script>
         <script src="js/script.js"></script>
         <script src="js/setting.js"></script>
-        <script src="js/hash.js"></script>
         <script src="js/select.js"></script>
     </body>
 </html>
