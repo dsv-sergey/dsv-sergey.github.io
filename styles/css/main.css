@@ -67,6 +67,26 @@ th, td {
     position: absolute;
     right: 10px;
 }
+.modalWindowShow {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: darkslategrey;
+    color: floralwhite;
+    opacity: 0.9;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.modalWindowShow li {
+    padding-top: 0.5rem;
+}
+.modalWindowShow span {
+    cursor: pointer;
+}
 #create {
     font-size: 1.5rem;
 }

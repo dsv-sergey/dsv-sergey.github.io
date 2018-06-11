@@ -40,7 +40,7 @@ function setDate(x) {
         return month;
     }
 }
-// message.onclick = showMessages;
+
 window.onhashchange = goLink;
 function goLink() {
     if (location.hash == "#calendar") {
@@ -141,31 +141,6 @@ function addHtmlElements(year, month, htmlEl) {
     caption.innerHTML = captionText;
     table.insertBefore(caption, table.firstChild);
 
-    // var messages = document.createElement("div");
-    // messages.className = "messages";
-    // messages.style.cssText =
-    // 	"height: auto; width: auto; margin-top: 20px; border: 3px double black; text-align: left; padding-left: 10px";
-    // table.parentNode.appendChild(messages);
-
-    // var resetButton = document.createElement("button");
-    // resetButton.id = "resetButton";
-    // resetButton.style.cssText =
-    // 	"height: 26px; width: auto; margin-top: 30px; text-alighn: center";
-    // resetButton.innerText = "Reset";
-    // table.parentNode.appendChild(resetButton);
-
-    // if (list != undefined) {
-    // 	for (var i = 0; i < list.length; i++) {
-    // 	var block = document.getElementsByClassName("messages"),
-    // 		clickOutput = document.createElement("p"),
-    // 		item = list.key(i);
-    // 	clickOutput.className = "message";
-    // 	clickOutput.style.cssText = "height: auto; width: auto";
-    // 	clickOutput.innerHTML = item + ": " + list.getItem(item);
-    // 	block[0].appendChild(clickOutput);
-    // 	}
-    // }
-
     earlyMonth.onclick = function() {
         if (month == 1) {
             drawCalendar(year - 1, 12, htmlEl);
@@ -188,19 +163,18 @@ function addHtmlElements(year, month, htmlEl) {
 
     [].forEach.call(selectItem, function(el) {
         el.addEventListener("click", addNote);
-    });
-
-    //   resetButton.onclick = function() {
-    // 	list.clear();
-    // 	messages.innerText = "";
-    //   };
-
-   
+    }); 
 }
 
 function drawCalendar(year, month, htmlEl) {
     var date = new Date(year, month - 1),
         today = date.getDate(),
+        storage = JSON.parse(list.getItem('name')),
+        // noteYear = [].forEach.call(storage, function(el) {
+        //     el.parse;
+        // }),
+        noteMonth = storage,
+        noteDay = storage,
         firstDayMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay(),
         firstDay = firstDayMonth === 0 ? 7 : firstDayMonth, // Определения дня недели 1-го числа
         dayRU = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
@@ -236,7 +210,7 @@ function drawCalendar(year, month, htmlEl) {
                 if (countDay <= dayInMonth) {
                     calendar =
                         calendar +
-                        "<td class='day' style='cursor: pointer'>" +
+                        "<td id=" + countDay + " class='day' style='cursor: pointer'>" +
                         countDay +
                         "</td>"; // Запись числа в день недели
                     countDay++; // Глобальный счетчик
