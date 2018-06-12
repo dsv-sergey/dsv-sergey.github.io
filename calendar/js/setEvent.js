@@ -10,3 +10,4 @@ function setEvent(classEl, event, fn) {
         el.addEventListener(event, fn);
     });
 }
+

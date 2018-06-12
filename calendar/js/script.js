@@ -58,8 +58,9 @@ function showCalendar(idEl) {
     var htmlEl = document.getElementById(idEl),
         elCreate = document.getElementById("create"),
         elAbout = document.getElementById("about");
+        elCreate.removeAttribute("class", "createWrap");
     if (!elCreate.hasAttribute("class")) {
-        elCreate.setAttribute("class", "hidden");
+        elCreate.setAttribute("class", "hidden");      
         preShowCalendar.innerHTML = "";
     }
     if (!elAbout.hasAttribute("class")) {
@@ -82,7 +83,8 @@ function createCalendar(idEl) {
     if (!elAbout.hasAttribute("class")) {
         elAbout.setAttribute("class", "hidden");
     }
-	htmlEl.removeAttribute("class", "hidden");
+    htmlEl.removeAttribute("class", "hidden");
+    htmlEl.setAttribute("class", "createWrap");
 	year = ((JSON.parse(list.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(list.getItem("name"))).date[0] : setDate("year"));
     month = ((JSON.parse(list.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(list.getItem("name"))).date[1] : setDate("month"));
     
@@ -93,6 +95,7 @@ function goToAbout(idEl) {
     var htmlEl = document.getElementById(idEl),
         elCalendar = document.getElementById("calendar"),
         elCreate = document.getElementById("create");
+        elCreate.removeAttribute("class", "createWrap");
     if (!elCalendar.hasAttribute("class")) {
         elCalendar.setAttribute("class", "hidden");
         elCalendar.innerHTML = "";
@@ -149,6 +152,7 @@ function addHtmlElements(year, month, htmlEl) {
             drawCalendar(year, month - 1, htmlEl);
             addHtmlElements(year, month - 1, htmlEl);
         }
+        initNote(month, year);
     };
 
     nextMonth.onclick = function() {
@@ -159,6 +163,7 @@ function addHtmlElements(year, month, htmlEl) {
             drawCalendar(year, month + 1, htmlEl);
             addHtmlElements(year, month + 1, htmlEl);
         }
+        initNote(month, year);
     };
 
     [].forEach.call(selectItem, function(el) {
@@ -198,7 +203,8 @@ function drawCalendar(year, month, htmlEl) {
         dayInMonth =
             33 - new Date(date.getFullYear(), date.getMonth(), 33).getDate(), // Определение количества дней в месяце, с 32 в Сафари баг
 		countDay = 1;
-	setStorageItem(year,month);
+    setStorageItem(year,month);
+    
     for (var i = 1; i <= 6; i++) {
         // Цикл по неделям
         calendar = calendar + "<tr>";

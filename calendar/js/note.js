@@ -48,3 +48,28 @@ function removeNote(ev) {
     list.setItem('name', JSON.stringify(storage));
     htmlEl.remove();
 }
+function initNote(month , year) {
+    var note = (JSON.parse(list.getItem('name')))['note'] || [],
+        days = document.getElementsByClassName('day') || [],
+        month = month - 1,
+        clickOutput;
+        [].forEach.call(days, function(dat) {
+            var day = dat.id;
+            var key = ((day < 10 ? "0" + day : day) +
+            "." +
+            (month < 10 ? "0" + month : month) +
+            "." +
+            year);
+            [].forEach.call(note, function(i) {
+                if (note[i] == key) {
+                    var output = note[i];
+                    clickOutput = document.createElement("span");
+                    clickOutput.id = key;
+                    clickOutput.className = "message";
+                    clickOutput.innerHTML = '\u2611';
+                    day.innerHTML += clickOutput.outerHTML;
+                    setEvent('.message', 'click', showMessages);
+            }
+        })
+    })
+}
