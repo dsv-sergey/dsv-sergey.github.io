@@ -1,0 +1,43 @@
+#partners {
+  height: 420px;
+  min-width: 1440px; }
+  #partners .grid:first-child {
+    padding-top: 120px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center; }
+    #partners .grid:first-child .icon-RCO:first-child {
+      grid-column-start: 1;
+      grid-column-end: 2; }
+    #partners .grid:first-child .icon-AudioPro:first-child {
+      grid-column-start: 2;
+      grid-column-end: 3; }
+    #partners .grid:first-child .icon-Infinity:first-child {
+      grid-column-start: 3;
+      grid-column-end: 4; }
+  #partners .grid:last-child {
+    padding-top: 60px;
+    padding-bottom: 120px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center; }
+    #partners .grid:last-child .icon-Sport {
+      grid-column-start: 1;
+      grid-column-end: 2; }
+    #partners .grid:last-child .icon-Swan {
+      grid-column-start: 2;
+      grid-column-end: 3; }
+    #partners .grid:last-child .icon-Swanser {
+      grid-column-start: 3;
+      grid-column-end: 4; }
+    #partners .grid:last-child .icon-AudioPro {
+      grid-column-start: 4;
+      grid-column-end: 5; }
+    #partners .grid:last-child .icon-Infinity {
+      grid-column-start: 5;
+      grid-column-end: 6; }
+    #partners .grid:last-child .icon-RCO {
+      grid-column-start: 6;
+      grid-column-end: 7; }
+  #partners a {
+    opacity: 0.3; }
+    #partners a:hover {
+      opacity: 1; }

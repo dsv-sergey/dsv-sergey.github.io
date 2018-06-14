@@ -3,7 +3,7 @@ function addNote(event) {
         return;
     }
     var target = event.target,
-        parseList = JSON.parse(list.getItem("name")),
+        parse = JSON.parse(localStorage.getItem("name")),
         clickOutput,
         note = prompt("Введите заметку:") || [],
         noteText,
@@ -18,18 +18,18 @@ function addNote(event) {
     if (note == "") {
         note = "Нет заметок";
     }
-    if (!parseList.hasOwnProperty('note')) {
-        noteText = parseList;
+    if (!parse.hasOwnProperty('note')) {
+        noteText = parse;
         noteText['note'] = noteText['note'] || {};
         noteText['note'][key] = noteText['note'][key] || [];
         noteText['note'][key].push(note);
-        list.setItem('name', JSON.stringify(noteText));
+        localStorage.setItem('name', JSON.stringify(noteText));
     } else {
-        noteText = parseList;
+        noteText = parse;
         noteText['note'] = noteText['note'] || {};
         noteText['note'][key] = noteText['note'][key] || [];
         noteText['note'][key].push(note);
-        list.setItem('name', JSON.stringify(noteText));
+        localStorage.setItem('name', JSON.stringify(noteText));
     }
     clickOutput = document.createElement("span");
     clickOutput.id = key;
@@ -43,13 +43,13 @@ function addNote(event) {
 function removeNote(ev) {
     var target = ev.target,
         htmlEl = target.parentElement,
-        storage = JSON.parse(list.getItem('name'));
+        storage = JSON.parse(localStorage.getItem('name'));
     storage['note'][htmlEl.className].splice(storage['note'][htmlEl.className].indexOf(htmlEl.innerText.slice(2)),1);
-    list.setItem('name', JSON.stringify(storage));
+    localStorage.setItem('name', JSON.stringify(storage));
     htmlEl.remove();
 }
 function initNote(month , year) {
-    var note = (JSON.parse(list.getItem('name')))['note'] || [],
+    var note = (JSON.parse(localStorage.getItem('name')))['note'] || [],
         days = document.getElementsByClassName('day') || [],
         month = month - 1,
         clickOutput;

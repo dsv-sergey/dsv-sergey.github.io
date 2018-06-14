@@ -61,7 +61,7 @@ th, td {
 .day {
     padding-top: 10px;
     padding-left: 10px;
-    background-color: rgb(173, 255, 47);
+    background-color: #19A68C;
 }
 .day:hover {
     background-color: rgb(187, 252, 135);
@@ -126,7 +126,7 @@ th, td {
     text-align: center;
 }
 #about a {
-    font-size: 4rem;
+    font-size: 3rem;
     text-decoration-line: none;
     color: black;
 }
@@ -168,9 +168,37 @@ footer {
 .empty {
     background-color: #7c7c80;
     visibility: collapse;
-
 }
-
+#preloader {
+    background:#ECF0F1;
+    overflow: hidden;
+    position: fixed;
+    height: inherit;
+    width: inherit;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom:0;
+    z-index: 100000;
+}
+.load{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+    /*change these sizes to fit into your project*/
+    width:100px;
+    height:100px;
+  }
+  .load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+  
+  .load :first-child{background:#19A68C;animation-delay:-1.5s}
+  .load :nth-child(2){background:#F63D3A;animation-delay:-1s}
+  .load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
+  .load :last-child{background:#193B48}
+  
+  @keyframes spin{
+    0%,100%{transform:translate(0)}
+    25%{transform:translate(160%)}
+    50%{transform:translate(160%, 160%)}
+    75%{transform:translate(0, 160%)}
+  }
 /*-------Media Queries----------*/
 
 @media screen and (max-width:800px) {
@@ -188,7 +216,7 @@ footer {
         text-align: center;
     }
     #about a {
-        font-size: 3rem;
+        font-size: 2rem;
         text-decoration-line: none;
     }
     #about a:hover {

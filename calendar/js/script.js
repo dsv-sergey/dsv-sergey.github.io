@@ -1,30 +1,61 @@
-var list = localStorage;
-window.onload = authorization;
+
+window.onload = initCalendar;
+/**
+ * @function
+ */
+function initCalendar() {
+    authorization();
+    new Promise(resolve => {
+        setTimeout(() => {
+            hiddenPreloader("preloader");
+            resolve();
+        }, 5000);
+    });
+    showCalendar("calendar");
+    
+}
+
 /**
  * 
  */
 function authorization() {
-    if (!list.length) {
+    if (!localStorage.length) {
         var name,
             random1 = Math.floor(Math.random() * 1000),
             random2 = Math.floor(Math.random() * 1000);
         name = JSON.stringify({
             id: random1 + random2 + ": " + new Date()
         });
-        list.setItem("name", name);
+        localStorage.setItem("name", name);
     } else {
-        var author = JSON.parse(list.getItem("name")['id']);
+        var author = JSON.parse(localStorage.getItem("name"))['id'];
     }
 }
+
+function hiddenPreloader(id) {
+    document.getElementById(id).setAttribute('class', 'hidden');
+}
 /**
- * 
+ * @function
+ * @param {string} classEl 
+ * @param {string} event 
+ * @param {function} fn 
+ */
+function setEvent(classEl, event, fn) {
+    var elements = document.querySelectorAll(classEl);
+    [].forEach.call(elements, function(el) {
+        el.addEventListener(event, fn);
+    });
+}
+/**
+ * @function
  * @param {number} year 
  * @param {number} month 
  */
 function setStorageItem(year, month) {
-	var param = JSON.parse(list.getItem("name"));
+	var param = JSON.parse(localStorage.getItem("name"));
 	param.date = [year, month];
-	list.setItem("name", JSON.stringify(param));
+	localStorage.setItem("name", JSON.stringify(param));
 }
 /**
  * 
@@ -40,19 +71,8 @@ function setDate(x) {
         return month;
     }
 }
+////////////////////////////////////////////////
 
-window.onhashchange = goLink;
-function goLink() {
-    if (location.hash == "#calendar") {
-        showCalendar("calendar");
-    }
-    if (location.hash == "#create") {
-        createCalendar("create");
-    }
-    if (location.hash == "#about") {
-        goToAbout("about");
-    }
-}
 
 function showCalendar(idEl) {
     var htmlEl = document.getElementById(idEl),
@@ -67,11 +87,11 @@ function showCalendar(idEl) {
         elAbout.setAttribute("class", "hidden");
     }
 	htmlEl.removeAttribute("class", "hidden");
-	year = ((JSON.parse(list.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(list.getItem("name"))).date[0] : setDate("year"));
-	month = ((JSON.parse(list.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(list.getItem("name"))).date[1] : setDate("month"));
+	year = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[0] : setDate("year"));
+	month = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[1] : setDate("month"));
     drawInteractiveCalendar(idEl, year, month);
 }
-
+////////////////
 function createCalendar(idEl) {
     var htmlEl = document.getElementById(idEl),
         elCalendar = document.getElementById("calendar"),
@@ -85,33 +105,13 @@ function createCalendar(idEl) {
     }
     htmlEl.removeAttribute("class", "hidden");
     htmlEl.setAttribute("class", "createWrap");
-	year = ((JSON.parse(list.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(list.getItem("name"))).date[0] : setDate("year"));
-    month = ((JSON.parse(list.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(list.getItem("name"))).date[1] : setDate("month"));
+	year = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[0] : setDate("year"));
+    month = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[1] : setDate("month"));
     
     drawInteractiveCalendar("preShowCalendar", year, month);
 }
+/////////////
 
-function goToAbout(idEl) {
-    var htmlEl = document.getElementById(idEl),
-        elCalendar = document.getElementById("calendar"),
-        elCreate = document.getElementById("create");
-        elCreate.removeAttribute("class", "createWrap");
-    if (!elCalendar.hasAttribute("class")) {
-        elCalendar.setAttribute("class", "hidden");
-        elCalendar.innerHTML = "";
-    }
-    if (!elCreate.hasAttribute("class")) {
-        elCreate.setAttribute("class", "hidden");
-    }
-    htmlEl.removeAttribute("class", "hidden");
-}
-
-function drawInteractiveCalendar(idEl, year, month) {
-    var htmlEl = document.getElementById(idEl)
-    
-    drawCalendar(year, month, htmlEl);
-    addHtmlElements(year, month, htmlEl);
-}
 
 function addHtmlElements(year, month, htmlEl) {
     var caption = document.createElement("caption"),
@@ -174,7 +174,7 @@ function addHtmlElements(year, month, htmlEl) {
 function drawCalendar(year, month, htmlEl) {
     var date = new Date(year, month - 1),
         today = date.getDate(),
-        storage = JSON.parse(list.getItem('name')),
+        storage = JSON.parse(localStorage.getItem('name')),
         // noteYear = [].forEach.call(storage, function(el) {
         //     el.parse;
         // }),
@@ -185,7 +185,7 @@ function drawCalendar(year, month, htmlEl) {
         dayRU = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
         calendar =
             "<table id='myCalendar'>" +
-            "<tr bgcolor='#7fff00'><th>" +
+            "<tr bgcolor='rgb(187, 252, 135)'><th>" +
             dayRU[1] +
             "</th><th>" +
             dayRU[2] +

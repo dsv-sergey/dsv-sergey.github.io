@@ -1,7 +1,7 @@
 function showMessages(ev) {
     var target = ev.target,
         idMessages = target.id,
-        storage = JSON.parse(list.getItem('name')),
+        storage = JSON.parse(localStorage.getItem('name')),
         messages = storage.note[idMessages],
         htmlEl = document.getElementById('modalWindow'),
         notes = '';

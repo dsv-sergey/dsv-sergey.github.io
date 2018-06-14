@@ -1,0 +1,57 @@
+header
+  .container
+    height: 100%
+    padding-top: 64px
+    grid-template-columns: 15% 70% 15%
+    grid-template-rows: 15% 30% 20% 35%
+  height: 806px
+  min-width: 1440px
+  background: $header_bg
+  box-sizing: border-box
+
+.header_title
+  justify-items: center
+  grid-row: 2
+  grid-column-start: 1
+  grid-column-end: 4
+  align-self: flex-end
+  font-family: Montserrat-Bold , sans-serif
+  font-size: 45px
+  font-weight: bold
+  line-height: 1.4
+  letter-spacing: 1.2pt
+  color: #505050
+  text-transform: uppercase
+  text-align: center
+  text-shadow: 0 9px 10px rgba(0, 0, 0, 0.24)
+  span
+    background-color: $main_color
+    padding: 0 10px
+
+
+.logo
+  @extend .icon-Logo
+  grid-row: 1
+  grid-column: 1
+
+.button
+  grid-column: 2
+  grid-row: 3
+  align-self: flex-end
+  justify-self: center
+  border: 2px solid #777879
+  border-radius: 2px
+  width: 228px
+  height: 49px
+  text-align: center
+  outline: none
+  line-height: 2.6
+  text-decoration: none
+  text-transform: uppercase
+  font-size: 18px
+  font-family: Montserrat ,sans-serif
+  color: #3c3c3d
+
+.juice
+  grid-row: 4
+  grid-column: 3

@@ -24,9 +24,14 @@
             </nav>
         </header>
         <section class="wrapperPages">
-            <div id="calendar" class="hidden"></div>
+            <div id="preloader">
+                <div class="load">
+                    <hr/><hr/><hr/><hr/>
+                </div>
+            </div>
+            <div id="calendar" name='nav' class="hidden"></div>
             <div id="modalWindow" class="hidden"></div>
-            <div id="create" class="hidden createWrap">
+            <div id="create" name='nav' class="hidden createWrap">
                 <div class='formCalendarConfig'>
                     <form action="" name="reg">
                         <fieldset class="calendarConfig">
@@ -62,9 +67,11 @@
                     </div>
                 </div>
             </div>
-            <div id="about" class="hidden">
+            <div id="about" name='nav' class="hidden">
                 <div><img src="https://avatars0.githubusercontent.com/u/33173033?s=460&v=4" width="230px" height="230px"></div>
-                <a href="https://github.com/dsv-sergey">Sergey Dervyannik on github</a>
+                <div><a class="phone-number text-decoration-none" href="tel:+375291831914">Phone: +375 29 183 19 14</a></div>
+                <div><a class="mail" href="mailto:dsv-sergey@mail.ru">Mail: dsv-sergey@mail.ru</a></div>
+                <div><a href="https://github.com/dsv-sergey.github.io/calendar/index.html">Sergey Dervyannik on github</a></div>
             </div>
         </section>
         <footer>
@@ -84,6 +91,7 @@
           firebase.initializeApp(config);
         </script>
         <script src="js/script.js"></script>
+        <script src="js/nav.js"></script>
         <script src="js/setting.js"></script>
         <script src="js/note.js"></script>
         <script src="js/messages.js"></script>
