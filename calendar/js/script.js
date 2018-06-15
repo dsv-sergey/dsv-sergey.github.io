@@ -1,7 +1,8 @@
 
 window.onload = initCalendar;
 /**
- * @function
+ * @function 
+ * init calendar
  */
 function initCalendar() {
     authorization();
@@ -11,12 +12,17 @@ function initCalendar() {
             resolve();
         }, 5000);
     });
-    showCalendar("calendar");
-    
+    showCalendar({el : "calendar",
+        showMonth : true,
+        allowChange : true,
+        allowAdd : true,
+        allowRemove : true,
+        date : [2018, 12],
+    }); 
 }
-
 /**
- * 
+ * @function
+ * authorization new user and id old user
  */
 function authorization() {
     if (!localStorage.length) {
@@ -31,7 +37,11 @@ function authorization() {
         var author = JSON.parse(localStorage.getItem("name"))['id'];
     }
 }
-
+/**
+ * @function
+ * @param {string} id 
+ * unmount preloader
+ */
 function hiddenPreloader(id) {
     document.getElementById(id).setAttribute('class', 'hidden');
 }
@@ -40,6 +50,7 @@ function hiddenPreloader(id) {
  * @param {string} classEl 
  * @param {string} event 
  * @param {function} fn 
+ * add listener
  */
 function setEvent(classEl, event, fn) {
     var elements = document.querySelectorAll(classEl);
@@ -51,6 +62,7 @@ function setEvent(classEl, event, fn) {
  * @function
  * @param {number} year 
  * @param {number} month 
+ * saving the date used
  */
 function setStorageItem(year, month) {
 	var param = JSON.parse(localStorage.getItem("name"));
@@ -58,8 +70,9 @@ function setStorageItem(year, month) {
 	localStorage.setItem("name", JSON.stringify(param));
 }
 /**
- * 
+ * @function
  * @param {string} x 
+ * define today's date on request
  */
 function setDate(x) {
     var today = new Date(),
@@ -71,11 +84,13 @@ function setDate(x) {
         return month;
     }
 }
-////////////////////////////////////////////////
-
-
-function showCalendar(idEl) {
-    var htmlEl = document.getElementById(idEl),
+/**
+ * @function
+ * @param {object} obj
+ * show calendar with settings
+ */
+function showCalendar(obj) {
+    var htmlEl = document.getElementById(obj.el),
         elCreate = document.getElementById("create"),
         elAbout = document.getElementById("about");
         elCreate.removeAttribute("class", "createWrap");
@@ -83,41 +98,62 @@ function showCalendar(idEl) {
         elCreate.setAttribute("class", "hidden");      
         preShowCalendar.innerHTML = "";
     }
+    obj;
     if (!elAbout.hasAttribute("class")) {
         elAbout.setAttribute("class", "hidden");
     }
 	htmlEl.removeAttribute("class", "hidden");
 	year = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[0] : setDate("year"));
 	month = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[1] : setDate("month"));
-    drawInteractiveCalendar(idEl, year, month);
+    drawInteractiveCalendar(obj.el, year, month);
 }
-////////////////
-function createCalendar(idEl) {
-    var htmlEl = document.getElementById(idEl),
-        elCalendar = document.getElementById("calendar"),
-        elAbout = document.getElementById("about");
-    if (!elCalendar.hasAttribute("class")) {
-        elCalendar.setAttribute("class", "hidden");
-        elCalendar.innerHTML = "";
-    }
-    if (!elAbout.hasAttribute("class")) {
-        elAbout.setAttribute("class", "hidden");
-    }
+/**
+ * @function
+ * @param {object} ev 
+ * show messajes 
+ */
+function showMessages(ev) {
+    var target = ev.target,
+        idMessages = target.id,
+        storage = JSON.parse(localStorage.getItem('name')),
+        messages = storage.note[idMessages],
+        htmlEl = document.getElementById('modalWindow'),
+        notes = '';
+    notes += "<h1>" + idMessages + "<span class='closeModalWindow'>          \u274C</span></h1><ul>";
+    [].forEach.call(messages, function(el) {
+        notes += "<li class=" + idMessages + "><span class='remove'>\u274C   </span>" + el + "</li>"
+    });
+    notes += "</ul>";
+    htmlEl.innerHTML = notes;
     htmlEl.removeAttribute("class", "hidden");
-    htmlEl.setAttribute("class", "createWrap");
-	year = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[0] : setDate("year"));
-    month = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[1] : setDate("month"));
-    
-    drawInteractiveCalendar("preShowCalendar", year, month);
+    htmlEl.setAttribute("class", "modalWindowShow");
+    setEvent('.closeModalWindow', 'click', closeMessages);
+    setEvent('.remove', 'click', removeNote);
 }
-/////////////
-
-
-function addHtmlElements(year, month, htmlEl) {
+/**
+ * @funktion
+ * @param {object} ev
+ * close modal.window; 
+ */
+function closeMessages(ev) {
+    var target = ev.target;
+    html = document.getElementsByClassName('modalWindowShow');
+    html[0].setAttribute("class", "hidden");
+    html[0].removeAttribute("class", "modalWindowShow");
+}
+/**
+ * @function
+ * @param {number} year 
+ * @param {number} month 
+ * @param {object} htmlEl 
+ * adding functionality to the calendar
+ */
+function addHtmlElements(year, month, htmlEl, options) {
     var caption = document.createElement("caption"),
         captionText = "",
         table = document.getElementById("myCalendar"),
         selectItem = document.querySelectorAll(".day"),
+        options = options;
         monthRU = [
             "Январь",
             "Февраль",
@@ -170,7 +206,12 @@ function addHtmlElements(year, month, htmlEl) {
         el.addEventListener("click", addNote);
     }); 
 }
-
+/**
+ * 
+ * @param {number} year 
+ * @param {number} month 
+ * @param {object} htmlEl 
+ */
 function drawCalendar(year, month, htmlEl) {
     var date = new Date(year, month - 1),
         today = date.getDate(),
@@ -228,3 +269,93 @@ function drawCalendar(year, month, htmlEl) {
     calendar = calendar + "</table>";
     htmlEl.innerHTML = calendar;
 }
+/**
+ * @function
+ * @param {object} event 
+ * adding notes in storage and modal window
+ */
+function addNote(event) {
+    if (event.target.className != 'day') {
+        return;
+    }
+    var target = event.target,
+        parse = JSON.parse(localStorage.getItem("name")),
+        clickOutput,
+        note = prompt("Введите заметку:") || [],
+        noteText,
+        dayClick = target.id,
+        key =
+            ((dayClick < 10 ? "0" + dayClick : dayClick) +
+            "." +
+            (month < 10 ? "0" + month : month) +
+            "." +
+            year) || [],
+        stringKey;
+    if (note == "") {
+        note = "Нет заметок";
+    }
+    if (!parse.hasOwnProperty('note')) {
+        noteText = parse;
+        noteText['note'] = noteText['note'] || {};
+        noteText['note'][key] = noteText['note'][key] || [];
+        noteText['note'][key].push(note);
+        localStorage.setItem('name', JSON.stringify(noteText));
+    } else {
+        noteText = parse;
+        noteText['note'] = noteText['note'] || {};
+        noteText['note'][key] = noteText['note'][key] || [];
+        noteText['note'][key].push(note);
+        localStorage.setItem('name', JSON.stringify(noteText));
+    }
+    clickOutput = document.createElement("span");
+    clickOutput.id = key;
+    clickOutput.className = "message";
+    clickOutput.innerHTML = '\u2611';
+    target.innerHTML += clickOutput.outerHTML;
+    setEvent('.message', 'click', showMessages);
+    // var block = document.getElementsByClassName("messages");
+    // block[0].appendChild(clickOutput);
+}
+/**
+ * @function
+ * @param {object} ev 
+ */
+function removeNote(ev) {
+    var target = ev.target,
+        htmlEl = target.parentElement,
+        storage = JSON.parse(localStorage.getItem('name'));
+    storage['note'][htmlEl.className].splice(storage['note'][htmlEl.className].indexOf(htmlEl.innerText.slice(2)),1);
+    localStorage.setItem('name', JSON.stringify(storage));
+    htmlEl.remove();
+}
+/**
+ * @function
+ * @param {number} month 
+ * @param {number} year 
+ */
+function initNote(month , year) {
+    var note = (JSON.parse(localStorage.getItem('name')))['note'] || [],
+        days = document.getElementsByClassName('day') || [],
+        month = month - 1,
+        clickOutput;
+        [].forEach.call(days, function(dat) {
+            var day = dat.id;
+            var key = ((day < 10 ? "0" + day : day) +
+            "." +
+            (month < 10 ? "0" + month : month) +
+            "." +
+            year);
+            [].forEach.call(note, function(i) {
+                if (note[i] == key) {
+                    var output = note[i];
+                    clickOutput = document.createElement("span");
+                    clickOutput.id = key;
+                    clickOutput.className = "message";
+                    clickOutput.innerHTML = '\u2611';
+                    day.innerHTML += clickOutput.outerHTML;
+                    setEvent('.message', 'click', showMessages);
+            }
+        })
+    })
+}
+

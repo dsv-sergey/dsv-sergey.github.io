@@ -58,11 +58,24 @@
                     <div id="outputForm" style="flex-direction: row;">
                         <fieldset>
                             <legend>Code</legend>
-                            <pre id="code"></pre>
+                            <textarea id="code">
+<script href='https://dsv-sergey.github.io/calendar/js/app.js'></script>
+<script>
+    showCalendar({
+        el: "calendar",
+        showMonth: true,
+        allowChange: true,
+        allowAdd: true,
+        allowRemove: true,
+        date: [2018, 12],
+    });
+</script>
+                            </textarea>
                         </fieldset>
                         <fieldset class="previewCalendar">
                             <legend>Calendar preview</legend>
-                            <div id="preShowCalendar"></div>
+                            <div id="preShowCalendar">
+                            </div>
                         </fieldset>
                     </div>
                 </div>
@@ -92,11 +105,7 @@
         </script>
         <script src="js/script.js"></script>
         <script src="js/nav.js"></script>
-        <script src="js/setting.js"></script>
-        <script src="js/note.js"></script>
-        <script src="js/messages.js"></script>
-        <script src="js/modalWindow.js"></script>
-        <script src="js/select.js"></script>
-        <script src="js/setEvent.js"></script>
+        <script src="js/settingFunc.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

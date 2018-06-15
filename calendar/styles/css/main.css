@@ -113,11 +113,12 @@ th, td {
 }
 .outputForm {
     grid-area: footer;
+    grid-template-rows: auto;
 }
-/* .previewCalendar {
-    width: 50%;
-    height: 50%;
-} */
+#code {
+    height: 200px;
+    min-width: 300px;
+}
 #preShowCalendar {
     width: 50%;
     height: 50%;
