@@ -32,3 +32,41 @@ a {
     margin: 3rem;
     color:#fff;
 }
+@media screen and (max-width:800px) {
+    section {
+        border-radius: 16px;
+        width: 90%;
+    }
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 1.5rem;
+    }
+    .wrapper {
+        border-radius: 13px;
+    }
+    a {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 2rem;
+    }
+}
+@media screen and (max-width:400px) {
+    section {
+        border-radius: 12px;
+        width: 95%;
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 1rem;
+    }
+    .wrapper {
+        border-radius: 10px;
+    }
+    a {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 1rem;
+    }
+}
