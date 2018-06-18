@@ -1,6 +1,34 @@
+body {
+    background-color: #412F2F;
+    background-image: linear-gradient(160deg,#412F2F 15%, #6B2686 85%);
+}
+section {
+    background-image: linear-gradient(10deg,#ade0ee 20%, #5471B9 80%);
+    border: 3px solid rgb(75, 68, 68);
+    border-radius: 20px;
+    width: 80%;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 3rem;
+}
+.wrapper {
+    background-color: #f29c54;
+    background-image: linear-gradient(45deg,#f29c54 0%, #DB4367 100%);
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin: auto;
+}
 a {
+    display: block;
     text-decoration: none;
     font-size: 3rem;
-    padding: 10px 40px 10px 40px;
-    color: mediumseagreen;
+    font-weight: 800;
+    margin: 3rem;
+    color:#fff;
 }
