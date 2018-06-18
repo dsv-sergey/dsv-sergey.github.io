@@ -64,10 +64,10 @@ function setEvent(classEl, event, fn) {
  * @param {number} month 
  * saving the date used
  */
-// function setStorageItem(year, month) {
-//     date = [month, year];
-//     localStorage.setItem('date', JSON.stringify(date));
-// }
+function setStorageItem(year, month) {
+    date = [month, year];
+    localStorage.setItem('date', JSON.stringify(date));
+}
 /**
  * @function
  * @param {string} x 
