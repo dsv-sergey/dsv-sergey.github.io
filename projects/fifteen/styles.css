@@ -1,0 +1,27 @@
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+}
+h1 {
+    font-style: italic;
+    color: #373fff;
+}
+.form {
+	display: block;
+}
+td {
+	border: 1px solid blue;
+	border-radius: 3px;
+    cursor: default;
+    width: 4em;
+    height: 4em;
+    text-align: center;
+}
+table {
+    margin: 20px;
+    border: 2px solid DodgerBlue;
+    border-collapse: separate;
+}
+.empty {
+	border: none;
+}

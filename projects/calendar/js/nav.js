@@ -2,17 +2,26 @@ window.onhashchange = goLink;
 setEvent('nav', 'click', goLink);
 function goLink() {
     if (location.hash == "#calendar") {
-        showCalendar({el : "calendar",
-        showMonth : true,
-        allowChange : true,
-        allowAdd : true,
-        allowRemove : true,
-        date : [2018, 12],
-        });
+        showCalendar({
+            el : "calendar",
+            showMonth : true,
+            allowChange : true,
+            allowAdd : true,
+            allowRemove : true,
+            date : [2018, 12],
+            });
     }
     if (location.hash == "#create") {
-        createCalendar("create");
-    }
+        createCalendar("create", 
+            {
+                allowChange: true,
+                allowAdd: true,
+                allowRemove: true,
+                showMonth: true,
+                date: date,
+                el: calendar
+            })
+        }
     if (location.hash == "#about") {
         goToAbout("about");
     }
@@ -22,7 +31,7 @@ function goLink() {
  * @function
  * @param {string} idEl 
  */
-function createCalendar(idEl) {
+function createCalendar(idEl, setting) {
     var htmlEl = document.getElementById(idEl),
         elCalendar = document.getElementById("calendar"),
         elAbout = document.getElementById("about");
@@ -35,10 +44,11 @@ function createCalendar(idEl) {
     }
     htmlEl.removeAttribute("class", "hidden");
     htmlEl.setAttribute("class", "createWrap");
-	year = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[0] : setDate("year"));
-    month = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[1] : setDate("month"));
-    
-    drawInteractiveCalendar("preShowCalendar", year, month);
+	year = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[1] : obj.date[0]);
+	month = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[0] : obj.date[1]);
+    setEvent('form', 'change', displayCreate);
+    drawInteractiveCalendar("preShowCalendar", year, month, setting);
+    displayCreate();
 }
 
 function goToAbout(idEl) {
@@ -54,11 +64,4 @@ function goToAbout(idEl) {
         elCreate.setAttribute("class", "hidden");
     }
     htmlEl.removeAttribute("class", "hidden");
-}
-
-function drawInteractiveCalendar(idEl, year, month) {
-    var htmlEl = document.getElementById(idEl)
-    
-    drawCalendar(year, month, htmlEl);
-    addHtmlElements(year, month, htmlEl);
 }

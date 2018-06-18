@@ -17,7 +17,7 @@ function initCalendar() {
         allowChange : true,
         allowAdd : true,
         allowRemove : true,
-        date : [2018, 12],
+        date : [setDate('year'), setDate('month')],
     }); 
 }
 /**
@@ -64,11 +64,10 @@ function setEvent(classEl, event, fn) {
  * @param {number} month 
  * saving the date used
  */
-function setStorageItem(year, month) {
-	var param = JSON.parse(localStorage.getItem("name"));
-	param.date = [year, month];
-	localStorage.setItem("name", JSON.stringify(param));
-}
+// function setStorageItem(year, month) {
+//     date = [month, year];
+//     localStorage.setItem('date', JSON.stringify(date));
+// }
 /**
  * @function
  * @param {string} x 
@@ -89,7 +88,7 @@ function setDate(x) {
  * @param {object} obj
  * show calendar with settings
  */
-function showCalendar(obj) {
+function showCalendar(obj, setting) {
     var htmlEl = document.getElementById(obj.el),
         elCreate = document.getElementById("create"),
         elAbout = document.getElementById("about");
@@ -103,9 +102,9 @@ function showCalendar(obj) {
         elAbout.setAttribute("class", "hidden");
     }
 	htmlEl.removeAttribute("class", "hidden");
-	year = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[0] : setDate("year"));
-	month = ((JSON.parse(localStorage.getItem("name")).hasOwnProperty('date')) ? (JSON.parse(localStorage.getItem("name"))).date[1] : setDate("month"));
-    drawInteractiveCalendar(obj.el, year, month);
+	year = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[1] : obj.date[0]);
+	month = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[0] : obj.date[1]);
+    drawInteractiveCalendar(obj.el, year, month, obj);
 }
 /**
  * @function
@@ -205,6 +204,18 @@ function addHtmlElements(year, month, htmlEl, options) {
     [].forEach.call(selectItem, function(el) {
         el.addEventListener("click", addNote);
     }); 
+}
+/**
+ * 
+ * @param {*} idEl 
+ * @param {*} year 
+ * @param {*} month 
+ */
+function drawInteractiveCalendar(idEl, year, month, setting) {
+    var htmlEl = document.getElementById(idEl)
+    
+    drawCalendar(year, month, htmlEl);
+    addHtmlElements(year, month, htmlEl);
 }
 /**
  * 

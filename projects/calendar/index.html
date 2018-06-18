@@ -37,18 +37,18 @@
                         <fieldset class="calendarConfig">
                             <legend>Configure calendar</legend>
                             <div class="filds">
-                                <label><input type="checkbox" id="drive">Allow change month</label>
-                                <label><input type="checkbox" id="dd">Allow add tasks</label>
-                                <label><input type="checkbox" id="dd">Allow remove tasks</label>
-                                <label><input type="checkbox" id="dd">Show month / year</label>
+                                <label><input type="checkbox" id="changeMonth">Allow to change the month</label>
+                                <label><input type="checkbox" id="addTasks">Allow add tasks</label>
+                                <label><input type="checkbox" id="removeTasks">Allow remove tasks</label>
+                                <label><input type="checkbox" id="showDate">Show month / year</label>
                                 <fieldset>
                                     <legend>Set month and year</legend>
                                     <select name="monthSel" id="monthSel"></select>
                                     <select name="year" id="yearSel"></select>
                                 </fieldset>
                                 <fieldset>
-                                    <legend>Notes</legend>
-                                    <input type="textarea" id="comment" name="comment" placeholder="Add Note">
+                                    <legend>Id element</legend>
+                                    <input type="text" id="tagId" name="tagId" placeholder="Add the id of your tag">
                                 </fieldset>
                             </div>
                         </fieldset>
@@ -59,17 +59,6 @@
                         <fieldset>
                             <legend>Code</legend>
                             <textarea id="code">
-<script href='https://dsv-sergey.github.io/calendar/js/app.js'></script>
-<script>
-    showCalendar({
-        el: "calendar",
-        showMonth: true,
-        allowChange: true,
-        allowAdd: true,
-        allowRemove: true,
-        date: [2018, 12],
-    });
-</script>
                             </textarea>
                         </fieldset>
                         <fieldset class="previewCalendar">
