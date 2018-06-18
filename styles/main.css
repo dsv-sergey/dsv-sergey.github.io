@@ -22,6 +22,7 @@ h1 {
     width: 100%;
     border: 2px solid grey;
     border-radius: 15px;
+    box-sizing: border-box;
     margin: auto;
 }
 a {
