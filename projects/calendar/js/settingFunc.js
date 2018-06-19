@@ -34,5 +34,7 @@ function displayCreate(ev) {
         date: date,
         el: el
     };
+    localStorage.setItem("setting", JSON.stringify(setting));
     drawInteractiveCalendar("preShowCalendar", setting.date[1], setting.date[0], setting);
+    // addHtmlElements(setting.date[1], setting.date[0], htmlEl, setting)
 }
