@@ -8,7 +8,7 @@ function goLink() {
             allowChange : true,
             allowAdd : true,
             allowRemove : true,
-            date : [2018, 12],
+            date : [JSON.parse(localStorage['date'])[1], JSON.parse(localStorage['date'])[0]],
             });
     }
     if (location.hash == "#create") {
@@ -18,7 +18,7 @@ function goLink() {
                 allowAdd: true,
                 allowRemove: true,
                 showMonth: true,
-                date: date,
+                date: [setDate('year'), setDate('month')],
                 el: calendar
             })
         }

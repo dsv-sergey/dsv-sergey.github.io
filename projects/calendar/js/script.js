@@ -18,14 +18,15 @@ function initCalendar() {
         allowAdd : true,
         allowRemove : true,
         date : [setDate('year'), setDate('month')],
-    }); 
+    });
+    initNote(setDate('month'), setDate('year'));
 }
 /**
  * @function
  * authorization new user and id old user
  */
 function authorization() {
-    if (!localStorage.length) {
+    if (!localStorage.getItem("name")) {
         var name,
             random1 = Math.floor(Math.random() * 1000),
             random2 = Math.floor(Math.random() * 1000);
@@ -34,12 +35,12 @@ function authorization() {
         });
         localStorage.setItem("name", name);
     } else {
-        var author = JSON.parse(localStorage.getItem("name"))['id'];
+        var author = JSON.parse(localStorage.getItem("name"));
     }
 }
 /**
  * @function
- * @param {string} id 
+ * @param {string} id
  * unmount preloader
  */
 function hiddenPreloader(id) {
@@ -75,8 +76,8 @@ function setStorageItem(year, month) {
  */
 function setDate(x) {
     var today = new Date(),
-        year = today.getFullYear(),
-        month = today.getMonth() + 1;
+        year = +today.getFullYear(),
+        month = +today.getMonth() + 1;
     if (x == "year") {
         return year;
     } else {
@@ -85,11 +86,11 @@ function setDate(x) {
 }
 /**
  * @function
- * @param {object} obj
+ * @param {object} setting
  * show calendar with settings
  */
-function showCalendar(obj, setting) {
-    var htmlEl = document.getElementById(obj.el),
+function showCalendar(setting) {
+    var htmlEl = document.getElementById(setting.el),
         elCreate = document.getElementById("create"),
         elAbout = document.getElementById("about");
         elCreate.removeAttribute("class", "createWrap");
@@ -97,14 +98,14 @@ function showCalendar(obj, setting) {
         elCreate.setAttribute("class", "hidden");      
         preShowCalendar.innerHTML = "";
     }
-    obj;
     if (!elAbout.hasAttribute("class")) {
         elAbout.setAttribute("class", "hidden");
     }
 	htmlEl.removeAttribute("class", "hidden");
-	year = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[1] : obj.date[0]);
-	month = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[0] : obj.date[1]);
-    drawInteractiveCalendar(obj.el, year, month, obj);
+	year = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[1] : setting.date[0]);
+	month = ((localStorage.date != null) ? (JSON.parse(localStorage.getItem("date")))[0] : setting.date[1]);
+    drawInteractiveCalendar(setting.el, year, month, setting);
+    initNote(month, year);
 }
 /**
  * @function
@@ -114,8 +115,7 @@ function showCalendar(obj, setting) {
 function showMessages(ev) {
     var target = ev.target,
         idMessages = target.id,
-        storage = JSON.parse(localStorage.getItem('name')),
-        messages = storage.note[idMessages],
+        messages = JSON.parse(localStorage.getItem('note'))[idMessages],
         htmlEl = document.getElementById('modalWindow'),
         notes = '';
     notes += "<h1>" + idMessages + "<span class='closeModalWindow'>          \u274C</span></h1><ul>";
@@ -130,7 +130,7 @@ function showMessages(ev) {
     setEvent('.remove', 'click', removeNote);
 }
 /**
- * @funktion
+ * @function
  * @param {object} ev
  * close modal.window; 
  */
@@ -138,7 +138,7 @@ function closeMessages(ev) {
     var target = ev.target;
     html = document.getElementsByClassName('modalWindowShow');
     html[0].setAttribute("class", "hidden");
-    html[0].removeAttribute("class", "modalWindowShow");
+    
 }
 /**
  * @function
@@ -170,11 +170,11 @@ function addHtmlElements(year, month, htmlEl, options) {
 
     captionText =
         "<div style='display: flex; flex-direction: row; justify-content: space-between'>" +
-        "<button id='earlyMonth' style='width: auto; min-width: 50px; background: #adff2f'><</button><h3 id='captionDate' style='width: auto'> --- " +
+        "<button id='earlyMonth'><</button><h3 id='captionDate' style='width: auto'> --- " +
         monthRU[month - 1] +
         "  " +
         year +
-        " --- </h3><button id='nextMonth' style='width: auto; min-width: 50px; background: #adff2f'>></button></div>";
+        " --- </h3><button id='nextMonth'>></button></div>";
 
     caption.innerHTML = captionText;
     table.insertBefore(caption, table.firstChild);
@@ -183,22 +183,24 @@ function addHtmlElements(year, month, htmlEl, options) {
         if (month == 1) {
             drawCalendar(year - 1, 12, htmlEl);
             addHtmlElements(year - 1, 12, htmlEl);
+            initNote(12, year -1);
         } else {
             drawCalendar(year, month - 1, htmlEl);
             addHtmlElements(year, month - 1, htmlEl);
+            initNote(month-1, year);
         }
-        initNote(month, year);
     };
 
     nextMonth.onclick = function() {
         if (month == 12) {
             drawCalendar(year + 1, 1, htmlEl);
             addHtmlElements(year + 1, 1, htmlEl);
+            initNote(1, year + 1);
         } else {
             drawCalendar(year, month + 1, htmlEl);
             addHtmlElements(year, month + 1, htmlEl);
+            initNote(month + 1, year);
         }
-        initNote(month, year);
     };
 
     [].forEach.call(selectItem, function(el) {
@@ -212,10 +214,17 @@ function addHtmlElements(year, month, htmlEl, options) {
  * @param {*} month 
  */
 function drawInteractiveCalendar(idEl, year, month, setting) {
-    var htmlEl = document.getElementById(idEl)
-    
-    drawCalendar(year, month, htmlEl);
-    addHtmlElements(year, month, htmlEl);
+    var htmlEl = document.getElementById(idEl),
+    // var arrMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+    // allowChange = document.getElementById("changeMonth").checked,
+    // allowAdd = document.getElementById("addTasks").checked,
+    // allowRemove = document.getElementById("removeTasks").checked,
+    // showMonth = document.getElementById("showDate").checked,
+    // date = [arrMonth.indexOf(document.getElementById("monthSel").value) + 1, document.getElementById("yearSel").value],
+    // el = document.querySelector("input#tagId").value || "calendar";
+    setting = setting;
+    drawCalendar(year, month, htmlEl, setting);
+    addHtmlElements(year, month, htmlEl, setting);
 }
 /**
  * 
@@ -223,7 +232,7 @@ function drawInteractiveCalendar(idEl, year, month, setting) {
  * @param {number} month 
  * @param {object} htmlEl 
  */
-function drawCalendar(year, month, htmlEl) {
+function drawCalendar(year, month, htmlEl, setting) {
     var date = new Date(year, month - 1),
         today = date.getDate(),
         storage = JSON.parse(localStorage.getItem('name')),
@@ -290,33 +299,32 @@ function addNote(event) {
         return;
     }
     var target = event.target,
-        parse = JSON.parse(localStorage.getItem("name")),
+        parse = JSON.parse(localStorage.getItem("note")),
         clickOutput,
         note = prompt("Введите заметку:") || [],
         noteText,
         dayClick = target.id,
+        month = JSON.parse(localStorage.getItem("date"))[0];
+        year = JSON.parse(localStorage.getItem("date"))[1];
         key =
             ((dayClick < 10 ? "0" + dayClick : dayClick) +
             "." +
             (month < 10 ? "0" + month : month) +
             "." +
-            year) || [],
-        stringKey;
+            year) || [];
     if (note == "") {
         note = "Нет заметок";
     }
-    if (!parse.hasOwnProperty('note')) {
-        noteText = parse;
-        noteText['note'] = noteText['note'] || {};
-        noteText['note'][key] = noteText['note'][key] || [];
-        noteText['note'][key].push(note);
-        localStorage.setItem('name', JSON.stringify(noteText));
+    if (!parse) {
+        noteText = parse || {};
+        noteText[key] = noteText[key] || [];
+        noteText[key].push(note);
+        localStorage.setItem('note', JSON.stringify(noteText));
     } else {
-        noteText = parse;
-        noteText['note'] = noteText['note'] || {};
-        noteText['note'][key] = noteText['note'][key] || [];
-        noteText['note'][key].push(note);
-        localStorage.setItem('name', JSON.stringify(noteText));
+        noteText = parse || {};
+        noteText[key] = noteText[key] || [];
+        noteText[key].push(note);
+        localStorage.setItem('note', JSON.stringify(noteText));
     }
     clickOutput = document.createElement("span");
     clickOutput.id = key;
@@ -334,9 +342,13 @@ function addNote(event) {
 function removeNote(ev) {
     var target = ev.target,
         htmlEl = target.parentElement,
-        storage = JSON.parse(localStorage.getItem('name'));
-    storage['note'][htmlEl.className].splice(storage['note'][htmlEl.className].indexOf(htmlEl.innerText.slice(2)),1);
-    localStorage.setItem('name', JSON.stringify(storage));
+        storage = JSON.parse(localStorage.getItem('note'));
+        if (htmlEl.parentElement.childElementCount == 1) {
+            var marckUp = document.getElementById(htmlEl.className).parentElement;
+            marckUp.innerHTML = marckUp.id;
+        }
+    storage[htmlEl.className].splice(storage[htmlEl.className].indexOf(htmlEl.innerText.slice(2)),1);
+    localStorage.setItem('note', JSON.stringify(storage));
     htmlEl.remove();
 }
 /**
@@ -345,28 +357,31 @@ function removeNote(ev) {
  * @param {number} year 
  */
 function initNote(month , year) {
-    var note = (JSON.parse(localStorage.getItem('name')))['note'] || [],
+    var note = JSON.parse(localStorage.getItem('note')) || [],
         days = document.getElementsByClassName('day') || [],
-        month = month - 1,
+        month = month,
         clickOutput;
         [].forEach.call(days, function(dat) {
+            var html = dat;
             var day = dat.id;
             var key = ((day < 10 ? "0" + day : day) +
             "." +
             (month < 10 ? "0" + month : month) +
             "." +
             year);
-            [].forEach.call(note, function(i) {
-                if (note[i] == key) {
-                    var output = note[i];
+            if (note.hasOwnProperty(key)) {
+                [].forEach.call(note[key], function(i) {
+                    var output = i;
                     clickOutput = document.createElement("span");
                     clickOutput.id = key;
                     clickOutput.className = "message";
                     clickOutput.innerHTML = '\u2611';
-                    day.innerHTML += clickOutput.outerHTML;
+                    html.innerHTML += clickOutput.outerHTML;
                     setEvent('.message', 'click', showMessages);
-            }
-        })
+        
+            })
+        }
+    
     })
 }
 
