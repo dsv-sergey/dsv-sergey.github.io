@@ -11,6 +11,7 @@ function initCalendar() {
             resolve();
         }, 5000);
     });
+    location.hash = "#calendar";
     showCalendar({
         el: "calendar",
         showMonth: true,
@@ -180,13 +181,6 @@ function addHtmlElements(year, month, htmlEl, setting) {
         "Ноябрь",
         "Декабрь"
     ];
-    // var arrMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
-    // allowChange = document.getElementById("changeMonth").checked,
-    // allowAdd = document.getElementById("addTasks").checked,
-    // allowRemove = document.getElementById("removeTasks").checked,
-    // showMonth = document.getElementById("showDate").checked,
-    // date = [arrMonth.indexOf(document.getElementById("monthSel").value) + 1, document.getElementById("yearSel").value],
-    // el = document.querySelector("input#tagId").value || "calendar";
     if (setting.allowChange && setting.showMonth) {
         captionText =
             "<div style='display: flex; flex-direction: row; justify-content: space-between'>" +
@@ -285,6 +279,7 @@ function drawInteractiveCalendar(idEl, year, month, setting) {
         setting = setting;
     drawCalendar(year, month, htmlEl, setting);
     addHtmlElements(year, month, htmlEl, setting);
+    initNote(month, year);
 }
 /**
  *
@@ -407,7 +402,7 @@ function addNote(event) {
  */
 function removeNote(ev) {
     var setting = JSON.parse(localStorage.getItem("setting"));
-    if (setting.allowRemove) {
+    if ((location.hash == "#calendar") ? true : setting.allowRemove) {
         var target = ev.target,
             htmlEl = target.parentElement,
             storage = JSON.parse(localStorage.getItem("note"));
