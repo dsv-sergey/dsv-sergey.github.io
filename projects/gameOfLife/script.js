@@ -31,6 +31,10 @@ for (var i = 0; i < matrMemory.length; i++) {
 for (var i = 0; i < matrFuture.length; i++) {
     matrFuture[i] = new Array(matrX);
 }
+/**
+ * 
+ * @param {*} ev 
+ */
 function playGame(ev) {
 	if (ev.currentTarget.id == "start") {
 		option = true;
@@ -40,7 +44,11 @@ function playGame(ev) {
 			createMatr(matrNow, matrX, matrY);
 		}
 }
-
+/**
+ * 
+ * @param {*} matrNow 
+ * @param {*} option 
+ */
 function paintMatr(matrNow, option) {
 	htmlEl.innerHTML = matrNow.map(row => row.map(cell => (cell == 1 ? "x" : " ")).join("")).join("\n");
 	
@@ -49,39 +57,15 @@ function paintMatr(matrNow, option) {
 			setTimeout(() => {
                 resolve(createMatr(matrNow, matrX, matrY));
 			}, 1000);
-		  });
-		// var promise = new Promise((resolve, reject) => {
-		// 	setTimeout(() => {
-		// 		resolve(createMatr(matrNow, matrX, matrY));
-		// 	}, 1000);
-		// });
-		// new Promise(resolve => {
-		// 	setTimeout(() => {
-		// 		hiddenPreloader("preloader");
-		// 		resolve();
-		// 	}, 5000);
-        // });
-//         var a = [1, 2, 3, 4, 5, 6, 7];
-// var asyncProcess = function(i, cb) {
-//   console.log('start of processing ' + i);
-//   setTimeout(function() {
-//     console.log('end of processing ' + i);
-//     cb();
-//   }, 10000);
-// };
-
-// var i = 0;
-// var step = function() {
-//   if (i === a.length) {
-//     return alert('done');
-//   }
-//   asyncProcess(a[i], step);
-//   i++;
-// };
-
-// step();
+		});	
 	}
 }
+/**
+ * 
+ * @param {*} matrNow 
+ * @param {*} matrX 
+ * @param {*} matrY 
+ */
 function createMatr(matrNow, matrX, matrY) {
     for (var x = 0; x < matrX; x++) {
         for (var y = 0; y < matrY; y++) {
@@ -120,7 +104,10 @@ function createMatr(matrNow, matrX, matrY) {
 }
 
 htmlEl.addEventListener("click", setValueArray);
-
+/**
+ * 
+ * @param {*} ev 
+ */
 function setValueArray(ev) {
     // определяет какой элемент в поле нужно инвертировать
     var charWidth = htmlEl.clientWidth / matrNow[0].length;
@@ -129,7 +116,11 @@ function setValueArray(ev) {
         y = Math.floor(ev.offsetY / charHeight);
     setInversion(x, y);
 }
-
+/**
+ * 
+ * @param {*} x 
+ * @param {*} y 
+ */
 function setInversion(x, y) {
     //инвертирует значение
     if (matrNow[y][x] == 0) {
@@ -145,3 +136,34 @@ function setInversion(x, y) {
 // 	while (new Date() < ms){}
 // 	} 
 //+ block play/ pause + game Live
+
+// var promise = new Promise((resolve, reject) => {
+    // 	setTimeout(() => {
+    // 		resolve(createMatr(matrNow, matrX, matrY));
+    // 	}, 1000);
+    // });
+    // new Promise(resolve => {
+    // 	setTimeout(() => {
+    // 		hiddenPreloader("preloader");
+    // 		resolve();
+    // 	}, 5000);
+    // });
+//         var a = [1, 2, 3, 4, 5, 6, 7];
+// var asyncProcess = function(i, cb) {
+//   console.log('start of processing ' + i);
+//   setTimeout(function() {
+//     console.log('end of processing ' + i);
+//     cb();
+//   }, 10000);
+// };
+
+// var i = 0;
+// var step = function() {
+//   if (i === a.length) {
+//     return alert('done');
+//   }
+//   asyncProcess(a[i], step);
+//   i++;
+// };
+
+// step();
