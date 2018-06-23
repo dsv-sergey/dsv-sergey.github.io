@@ -1,5 +1,8 @@
 window.onhashchange = goLink;
 setEvent('nav', 'click', goLink);
+/**
+ * @function
+ */
 function goLink() {
     if (location.hash == "#calendar") {
         showCalendar({
@@ -50,7 +53,10 @@ function createCalendar(idEl, setting) {
     drawInteractiveCalendar("preShowCalendar", year, month, setting);
     displayCreate();
 }
-
+/**
+ * @function
+ * @param {string} idEl 
+ */
 function goToAbout(idEl) {
     var htmlEl = document.getElementById(idEl),
         elCalendar = document.getElementById("calendar"),

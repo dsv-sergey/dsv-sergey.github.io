@@ -2,6 +2,10 @@
 var form = document.getElementsByName("reg")[0];
 setEvent('reg', 'change', displayCreate);
 
+/**
+ * @function
+ * @param {object} ev 
+ */
 function displayCreate(ev) {
     var arrMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
         allowChange = document.getElementById("changeMonth").checked,
@@ -36,5 +40,4 @@ function displayCreate(ev) {
     };
     localStorage.setItem("setting", JSON.stringify(setting));
     drawInteractiveCalendar("preShowCalendar", setting.date[1], setting.date[0], setting);
-    // addHtmlElements(setting.date[1], setting.date[0], htmlEl, setting)
 }

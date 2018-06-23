@@ -262,7 +262,7 @@ function addHtmlElements(year, month, htmlEl, setting) {
     }
 }
 /**
- *
+ *@function
  * @param {*} idEl
  * @param {*} year
  * @param {*} month
@@ -282,7 +282,7 @@ function drawInteractiveCalendar(idEl, year, month, setting) {
     initNote(month, year);
 }
 /**
- *
+ *@function
  * @param {number} year
  * @param {number} month
  * @param {object} htmlEl

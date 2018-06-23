@@ -47,7 +47,7 @@ function paintMatr(matrNow, option) {
 	if (option) {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
-			   resolve();
+                resolve(createMatr(matrNow, matrX, matrY));
 			}, 1000);
 		  });
 		// var promise = new Promise((resolve, reject) => {
@@ -61,25 +61,25 @@ function paintMatr(matrNow, option) {
 		// 		resolve();
 		// 	}, 5000);
         // });
-        var a = [1, 2, 3, 4, 5, 6, 7];
-var asyncProcess = function(i, cb) {
-  console.log('start of processing ' + i);
-  setTimeout(function() {
-    console.log('end of processing ' + i);
-    cb();
-  }, 10000);
-};
+//         var a = [1, 2, 3, 4, 5, 6, 7];
+// var asyncProcess = function(i, cb) {
+//   console.log('start of processing ' + i);
+//   setTimeout(function() {
+//     console.log('end of processing ' + i);
+//     cb();
+//   }, 10000);
+// };
 
-var i = 0;
-var step = function() {
-  if (i === a.length) {
-    return alert('done');
-  }
-  asyncProcess(a[i], step);
-  i++;
-};
+// var i = 0;
+// var step = function() {
+//   if (i === a.length) {
+//     return alert('done');
+//   }
+//   asyncProcess(a[i], step);
+//   i++;
+// };
 
-step();
+// step();
 	}
 }
 function createMatr(matrNow, matrX, matrY) {
