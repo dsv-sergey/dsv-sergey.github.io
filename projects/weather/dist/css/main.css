@@ -1,0 +1,46 @@
+header {
+  height: 10%;
+  display: inline; }
+
+.request {
+  display: inline; }
+  .request p {
+    display: inline; }
+
+nav {
+  display: inline; }
+
+.search {
+  display: inline; }
+
+#map {
+  width: 1140px;
+  height: 500px; }
+
+body {
+  background: url(../img/bg-main.jpg) no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: white; }
+
+.grid {
+  display: grid; }
+
+.wrapper {
+  width: 1140px;
+  height: 90%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: rgba(200, 200, 200, 0.7);
+  border: 2px solid #fff;
+  -webkit-border-radius: 5px;
+          border-radius: 5px; }
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px; }
