@@ -1,0 +1,21 @@
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+    display: block;
+  }
+  h1 {
+    font-style: italic;
+    color: #373fff;
+  }
+  .header {
+    border: 1px solid black;
+    width: 60%;
+  }
+  .notes {
+    border: 1px solid black;
+    width: 60%;
+  }
+  .item {
+     border: 1px solid black;
+    margin: 10px;
+  }

@@ -32,8 +32,8 @@ for (var i = 0; i < matrFuture.length; i++) {
     matrFuture[i] = new Array(matrX);
 }
 /**
- * 
- * @param {*} ev 
+ * @function
+ * @param {object} ev 
  */
 function playGame(ev) {
 	if (ev.currentTarget.id == "start") {
@@ -45,26 +45,26 @@ function playGame(ev) {
 		}
 }
 /**
- * 
- * @param {*} matrNow 
- * @param {*} option 
+ * @function
+ * @param {Array} matrNow 
+ * @param {boolean} option 
  */
 function paintMatr(matrNow, option) {
 	htmlEl.innerHTML = matrNow.map(row => row.map(cell => (cell == 1 ? "x" : " ")).join("")).join("\n");
 	
 	if (option) {
 		return new Promise((resolve, reject) => {
-			setTimeout(() => {
+			
                 resolve(createMatr(matrNow, matrX, matrY));
-			}, 1000);
+		
 		});	
 	}
 }
 /**
- * 
- * @param {*} matrNow 
- * @param {*} matrX 
- * @param {*} matrY 
+ * @function
+ * @param {Array} matrNow 
+ * @param {number} matrX 
+ * @param {number} matrY 
  */
 function createMatr(matrNow, matrX, matrY) {
     for (var x = 0; x < matrX; x++) {
@@ -105,8 +105,8 @@ function createMatr(matrNow, matrX, matrY) {
 
 htmlEl.addEventListener("click", setValueArray);
 /**
- * 
- * @param {*} ev 
+ * @function
+ * @param {object} ev 
  */
 function setValueArray(ev) {
     // определяет какой элемент в поле нужно инвертировать
@@ -117,9 +117,9 @@ function setValueArray(ev) {
     setInversion(x, y);
 }
 /**
- * 
- * @param {*} x 
- * @param {*} y 
+ * @function
+ * @param {number} x 
+ * @param {number} y 
  */
 function setInversion(x, y) {
     //инвертирует значение

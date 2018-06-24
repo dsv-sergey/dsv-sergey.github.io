@@ -1,17 +1,19 @@
 {
   "name": "weather",
   "version": "1.0.0",
-  "description": "",
+  "description": "Weather",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "dsv-sergey",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.3",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
     "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0"
   }
 }

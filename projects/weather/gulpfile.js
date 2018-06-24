@@ -1,5 +1,17 @@
 'use strict';
 
-const gulp = require('gulp');
-const babelify = require('babelify');
-const browserify = require('browserify');
+var gulp = require('gulp'),
+    babelify = require('babelify'),
+    browserify = require('browserify'),
+    watch = require('gulp-watch'),
+    sass = require('gulp-sass');
+
+gulp.task('watch', function() {
+
+});
+
+gulp.task('sass', function() {
+    return gulp.src('app/sass/main.sass')
+    .pipe(sass())
+    .pipe(gulp.dest('app/css'))
+});
