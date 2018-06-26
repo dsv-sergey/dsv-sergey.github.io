@@ -5,13 +5,25 @@ var myMap,
 function init(){ 
     myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
-        zoom: 7
+        zoom: 7,
+        controls: ['fullscreenControl']
     }); 
+    myMap.controls.add(
+        new ymaps.control.Button({
+          data: {
+            content: "",
+            image: "../img/favorite.png"
+          },
+          options: {
+            maxWidth: 16,
+            selectOnClick: false
+          }
+        }
+      ));
+    // myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+    //     hintContent: 'Москва!',
+    //     balloonContent: 'Столица России'
+    // });
     
-    myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-        hintContent: 'Москва!',
-        balloonContent: 'Столица России'
-    });
-    
-    myMap.geoObjects.add(myPlacemark);
+    // myMap.geoObjects.add(myPlacemark);
 }

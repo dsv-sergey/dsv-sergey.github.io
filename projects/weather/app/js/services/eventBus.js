@@ -26,3 +26,5 @@ EventBus.prototype.once = function(event, hendler) {
     }.bind(this);
     this.on(event, wrapper);
 };
+
+export default EventBus;

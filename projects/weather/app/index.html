@@ -6,44 +6,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Weather</title>
         <meta name="author" content="Sergey Derevyannik">
-        <link href="images/weather.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="img/weather.ico" rel="shortcut icon" type="image/x-icon">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/userinfo/1.1.0/userinfo.min.js"></script>
     </head>
     <body>
         <div class="wrapper">
-            <h1>Weather Page</h1>
-            <header>
-                <div class="request">
-                    <label>
-                        <p>XHR</p>
-                        <input type="radio" name="request" value="XHR">
-                    </label>
-                    <label>
-                        <p>fetch</p>
-                        <input type="radio" name="request" value="fetch">
-                    </label>
-                </div>
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#main">Main</a>
-                    <a href="#author">Author</a>
-                </nav>
-                <div class="search">
-                    <label>
-                        <i class="fas fa-search"></i>
-                        <input type="text">
-                    </label>
-                </div>
-            </header>
-            <section>
-                    <div id="map" style="width: 600px; height: 400px"></div>
+            <section id="main">
+                <h1>Weather Page</h1>
+                <header class="grid">
+                    <div class="request">
+                        <label>
+                            <p>XHR</p>
+                            <input type="radio" name="request" value="XHR" checked>
+                        </label>
+                        <label>
+                            <p>fetch</p>
+                            <input type="radio" name="request" value="fetch">
+                        </label>
+                    </div>
+                    <nav>
+                        <a href="#main">Главная</a>
+                        <a href="#about">O сайте</a>
+                    </nav>
+                    <div class="search">
+                        <label>
+                            <i class="fas fa-search"></i>
+                            <input type="text">
+                        </label>
+                    </div>
+                </header>
+                <section>
+                        <div id="map"></div>
+                </section>
+                <footer>
+                    <div class="history">
+                        <h3>History:</h3>
+                    </div>
+                    <div class="weather">
+                        <h3>Weather:</h3>
+                    </div>
+                    <div class="favourites">
+                        <h3>Favourites:</h3>
+                    </div>
+                </footer>
             </section>
-            <footer>
-                <div class="history"></div>
-                <div class="weather"></div>
-                <div class="favourites"></div>
-            </footer>
+            <section id="about" class="hidden">
+                <header>
+                    <nav>
+                        <a href="#main">Главная</a>
+                        <a href="#about">O сайте</a>
+                    </nav>
+                </header>
+                <section>
+                    <div><img src="https://avatars0.githubusercontent.com/u/33173033?s=460&v=4" width="230px" height="230px"></div>
+                    <div><a class="phone-number text-decoration-none" href="tel:+375291831914">Phone: +375 29 183 19 14</a></div>
+                    <div><a class="mail" href="mailto:dsv-sergey@mail.ru">Mail: dsv-sergey@mail.ru</a></div>
+                    <div><a href="https://github.com/dsv-sergey.github.io/index.html">Sergey Dervyannik on github</a></div>
+                </section>
+            </section>
         </div>
         <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
         <script>
@@ -58,6 +81,7 @@
         };
         firebase.initializeApp(config);
         </script> -->
+        <script src="js/libs.min.js"></script>
         <script src="js/components/map.js"></script>
     </body>
 </html>

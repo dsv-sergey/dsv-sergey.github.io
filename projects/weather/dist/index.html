@@ -13,38 +13,45 @@
     </head>
     <body>
         <div class="wrapper">
-            <h1>Weather Page</h1>
-            <header>
-                <div class="request">
-                    <label>
-                        <p>XHR</p>
-                        <input type="radio" name="request" value="XHR">
-                    </label>
-                    <label>
-                        <p>fetch</p>
-                        <input type="radio" name="request" value="fetch">
-                    </label>
-                </div>
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#main">Main</a>
-                    <a href="#author">Author</a>
-                </nav>
-                <div class="search">
-                    <label>
-                        <i class="fas fa-search"></i>
-                        <input type="text">
-                    </label>
-                </div>
-            </header>
-            <section>
-                    <div id="map"></div>
+            <section id="main">
+                <h1>Weather Page</h1>
+                <header class="grid">
+                    <div class="request">
+                        <label>
+                            <p>XHR</p>
+                            <input type="radio" name="request" value="XHR">
+                        </label>
+                        <label>
+                            <p>fetch</p>
+                            <input type="radio" name="request" value="fetch">
+                        </label>
+                    </div>
+                    <nav>
+                        <a href="#main">Main</a>
+                        <a href="#about">About</a>
+                    </nav>
+                    <div class="search">
+                        <label>
+                            <i class="fas fa-search"></i>
+                            <input type="text">
+                        </label>
+                    </div>
+                </header>
+                <section>
+                        <div id="map"></div>
+                </section>
+                <footer>
+                    <div class="history"></div>
+                    <div class="weather"></div>
+                    <div class="favourites"></div>
+                </footer>
             </section>
-            <footer>
-                <div class="history"></div>
-                <div class="weather"></div>
-                <div class="favourites"></div>
-            </footer>
+            <section id="about" class="hidden">
+                    <div><img src="https://avatars0.githubusercontent.com/u/33173033?s=460&v=4" width="230px" height="230px"></div>
+                    <div><a class="phone-number text-decoration-none" href="tel:+375291831914">Phone: +375 29 183 19 14</a></div>
+                    <div><a class="mail" href="mailto:dsv-sergey@mail.ru">Mail: dsv-sergey@mail.ru</a></div>
+                    <div><a href="https://github.com/dsv-sergey.github.io/index.html">Sergey Dervyannik on github</a></div>
+            </section>
         </div>
         <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
         <script>
