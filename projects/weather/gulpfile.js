@@ -12,12 +12,16 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    plumber = require('gulp-plumber'),
+    babel = require('gulp-babel');
 
 gulp.task('sass', function() {
     return gulp.src('app/sass/**/*.sass')
+    .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+    .pipe(plumber.stop())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({stream: true}))
 });
@@ -40,6 +44,14 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('app/js'));
 });
+
+// gulp.task('defaultScripts', () =>
+//     gulp.src('app/js/**/*.js')
+//         .pipe(babel({
+//             presets: ['env']
+//         }))
+//         .pipe(gulp.dest('dist/js'))
+// );
 
 gulp.task('css-libs', ['sass'], function() {
     return gulp.src('app/css/libs.css')

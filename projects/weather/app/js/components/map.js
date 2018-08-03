@@ -1,10 +1,12 @@
+
+
 ymaps.ready(init);
 var myMap, 
     myPlacemark;
 
 function init(){ 
     myMap = new ymaps.Map("map", {
-        center: [55.76, 37.64],
+        center: getLatLon(),
         zoom: 7,
         controls: ['fullscreenControl']
     }); 
