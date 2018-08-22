@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Table, Input, Popup } from 'semantic-ui-react'
+import { Table, Input } from 'semantic-ui-react'
 
 
 
@@ -54,7 +54,7 @@ const PopupExampleHtml = (props) => {
 )}
 
 const mapStateToProps = state => ({
-    
+    taskList: state.tasks,
 });
 
 const mapDispatchToProps = (dispatch) => ({
