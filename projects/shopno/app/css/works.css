@@ -1,7 +1,8 @@
 #works {
   height: 1166px;
   min-width: 1440px;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 .section_title_h2 {
   grid-row: 1;

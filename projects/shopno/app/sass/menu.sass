@@ -1,0 +1,145 @@
+@import "variables"
+  
+.navBurger
+  position: fixed
+  top: 82px
+  right: 152px
+  justify-self: end
+  cursor: pointer
+  background: $nav_burger
+  box-sizing: border-box
+  background-clip: content-box
+  width: 30px
+  height: 15px
+  z-index: 10
+  border-top: 6px solid transparent
+  border-bottom: 6px solid transparent
+  -webkit-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: all 0.25s ease-in-out
+  transition: all 0.25s ease-in-out
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    background: $nav_burger
+    height: 3px
+    width: 100%
+    right: 0
+    will-change: rotate
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transition: all 0.5s ease
+    transition: all 0.5s ease
+
+  &:before
+    top: -10px
+
+  &:after
+    bottom: -10px
+    width: 100%
+
+  &.active
+    background: transparent
+    background-clip: content-box
+    position: fixed
+    top: 82px
+    right: 162px
+    z-index: 1000
+
+  &.active:before
+    -webkit-transform: rotate(135deg)
+    transform: rotate(135deg)
+    top: 0
+    background: $cross_burger
+    width: 110%
+
+  &.active:after
+    bottom: 0
+    -webkit-transform: rotate(-135deg)
+    transform: rotate(-135deg)
+    background: $cross_burger
+    width: 110%
+
+.overlay
+  position: fixed
+  background: $menu_bg
+  top: 0
+  right: 0
+  width: 100%
+  height: 100%
+  opacity: 0.8
+  transform-origin: right top
+  transform: scale(0)
+  visibility: hidden
+  transition: all .4s ease-in-out
+  overflow: hidden
+  &.open
+    opacity: .99
+    visibility: visible
+    z-index: 1000
+    transform: scale(1)
+    li
+      display: block
+      animation: fadeInRight .4s cubic-bezier(.42, .83, .7, 1.5) forwards
+      animation-delay: .4s
+      transform: rotate(-7deg)
+      transform-origin: right bottom
+      &:nth-of-type(2)
+        animation-delay: .5s
+
+      &:nth-of-type(3)
+        animation-delay: .6s
+
+      &:nth-of-type(4)
+        animation-delay: .7s
+
+      &:nth-of-type(5)
+        animation-delay: .8s
+
+.overlayMenu
+  position: absolute
+  text-align: right
+  right: 10vw
+  bottom: 10vw
+  ul
+    list-style: none
+    padding: 0
+    margin: 0 auto
+    display: block
+    position: relative
+    height: 100%
+    li
+      display: block
+      position: relative
+      opacity: 0
+      width: 100%
+      a
+        display: inline-block
+        border: 1px solid $border_menu_button
+        color: $text_menu_button
+        text-decoration: none
+        font-size: 30px
+        padding: 10px 40px 10px 40px
+        margin: 5px 0
+        transition: .2s
+        &:hover,
+        &:active,
+        &:focus
+          transform: translateX(-2px)
+          // outline-offset: 2px
+          padding-left: 80px
+          outline: 1px solid $border_menu_button_hidden
+          background: $bg_menu_button_hidden
+
+.locked
+  overflow: hidden
+
+@keyframes fadeInRight
+  0%
+    opacity: 0
+    left: 50px
+  100%
+    opacity: 1
+    left: 0
+    transform: rotate(0deg)

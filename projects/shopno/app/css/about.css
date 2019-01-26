@@ -1,0 +1,127 @@
+#about {
+  height: 984px;
+  background: #f8fafa;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 1440px; }
+  #about .grid {
+    grid-template-columns: auto auto; }
+  #about .about_carousel_h3_title {
+    font-family: MerriweatherBold , serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3e3f3f;
+    text-transform: uppercase; }
+  #about .title_about {
+    font-family: Montserrat-Bold , sans-serif;
+    font-weight: bold;
+    font-size: 38px;
+    letter-spacing: 1.3pt;
+    color: rgba(0, 0, 0, 0.902);
+    text-transform: uppercase;
+    padding-top: 120px;
+    text-align: center; }
+  #about .owl-carousel {
+    overflow: visible; }
+    #about .owl-carousel .item {
+      padding-bottom: 30px; }
+      #about .owl-carousel .item .pic {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        position: relative;
+        padding-right: 40px;
+        padding-left: 40px; }
+      #about .owl-carousel .item img {
+        height: 100%;
+        padding: auto;
+        -webkit-box-shadow: 0 0 20px rgba(20, 20, 20, 0.2);
+                box-shadow: 0 0 20px rgba(20, 20, 20, 0.2); }
+      #about .owl-carousel .item span:after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        top: 40px;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        background-color: #eff0f2; }
+        @media screen and (max-width: 1199px) {
+          #about .owl-carousel .item span:after {
+            width: 96%;
+            left: 2%;
+            right: 2%; } }
+  #about .about_carousel_text_content {
+    padding-left: 120px;
+    padding-right: 40px; }
+    #about .about_carousel_text_content p {
+      font-family: "RalewayRegular", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      line-height: 2rem;
+      padding-top: 15px;
+      padding-bottom: 35px;
+      margin-bottom: 0; }
+  #about .owl-theme .owl-dots {
+    margin-top: 10px; }
+    @media screen and (min-width: 992px) {
+      #about .owl-theme .owl-dots {
+        width: 40%; } }
+    #about .owl-theme .owl-dots .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 3px;
+      cursor: pointer;
+      background-color: #d0d0d0;
+      border: none;
+      -webkit-border-radius: 4px;
+              border-radius: 4px; }
+    #about .owl-theme .owl-dots .owl-dot span:hover {
+      background-color: #6ff6eb; }
+    #about .owl-theme .owl-dots .active span {
+      background-color: #6ff6eb !important; }
+  #about .owl-theme .owl-nav {
+    position: relative;
+    top: -30px;
+    margin-top: 0;
+    margin-right: 10%;
+    margin-left: auto;
+    width: 135px;
+    z-index: 1; }
+    #about .owl-theme .owl-nav .owl-prev {
+      position: absolute;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: block;
+      background: #fff url(../images/carousel/arrow_l.png) no-repeat center center;
+      -webkit-box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+              box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+      min-width: 53px;
+      width: 53px;
+      min-height: 53px; }
+      #about .owl-theme .owl-nav .owl-prev:hover, #about .owl-theme .owl-nav .owl-prev:focus {
+        background: #6ff6eb url(../images/carousel/arrow_2l.png) no-repeat center center; }
+    #about .owl-theme .owl-nav .owl-next {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: block;
+      background: #fff url(../images/carousel/arrow_r.png) no-repeat center center;
+      -webkit-box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+              box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+      min-width: 53px;
+      width: 53px;
+      min-height: 53px; }
+      #about .owl-theme .owl-nav .owl-next:hover, #about .owl-theme .owl-nav .owl-next:focus {
+        background: #6ff6eb url(../images/carousel/arrow_2r.png) no-repeat center center; }

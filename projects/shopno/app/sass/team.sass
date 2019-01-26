@@ -1,0 +1,126 @@
+@import "variables"
+  
+#team
+  height: 1314px
+  box-sizing: border-box
+  min-width: 1440px
+  @media screen and (max-width: 1199px)
+    height: auto
+
+.team_gallery
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: 50% 50%
+  grid-column-gap: 10px
+  grid-row-gap: 10px
+  align-content: space-evenly
+
+.team_gallery_item
+  position: relative
+  width: 100%
+  &:hover figcaption
+    opacity: 1
+    box-shadow: 0 4px 10px rgba(0,0,0,.4)
+
+.team_gallery_item_text
+  position: absolute
+  top: 0
+  right: 7px
+  bottom: 0
+  left: 7px
+  margin: 184px 18px 15px 18px
+  background-color: $main_color
+  font-family: $content-font
+  font-size: 1.2rem
+  letter-spacing: 0.01em
+  line-height: 1.4rem
+  color: rgba(0,0,0,.8)
+  padding: 38px
+  opacity: 0
+  transition: opacity .2s ease-out
+  @media screen and (max-width: 399px)
+    font-size: 1.3rem
+    line-height: 2rem
+    padding: 26px
+    margin-top: 145px
+  @media screen and (min-width: 400px) and (max-width: 575px)
+    font-size: 1.6rem
+    line-height: 2.4rem
+    padding: 38px
+    margin-top: 184px
+  @media screen and (min-width: 576px) and (max-width: 767px)
+    font-size: 1.3rem
+    line-height: 2rem
+    padding: 26px
+    margin-top: 45px
+  @media screen and (min-width: 768px) and (max-width: 991px)
+    font-size: 1.3rem
+    line-height: 2rem
+    padding: 26px
+    margin-top: 175px
+  @media screen and (min-width: 992px) and (max-width: 1199px)
+    font-size: 1.3rem
+    line-height: 2rem
+    padding: 26px
+    margin-top: 150px
+  &:before
+    content: ''
+    position: absolute
+    left: 21px
+    top: -28px
+    border: 11px solid transparent
+    border-bottom: 18px solid $main_color
+  h3
+    text-transform: uppercase
+    font-family: 'MerriweatherBold', serif
+    font-size: 1.2rem
+    color: rgba(39,39,39,.95)
+    padding-bottom: 20px
+    margin-bottom: 0
+    span
+      text-transform: none
+      font-family: 'MerriweatherRegular', serif
+      font-style: italic
+      font-size: 1rem
+      letter-spacing: 0.03em
+      color: rgba(118,121,120,.95)
+      @media screen and (max-width: 360px)
+        font-size: 1rem
+
+      @media screen and (min-width: 576px) and (max-width: 767px)
+        font-size: 1rem
+
+      @media screen and (min-width: 992px) and (max-width: 1199px)
+        font-size: 1rem
+
+
+    @media screen and (max-width: 360px)
+      font-size: 1.2rem
+      padding-bottom: 15px
+
+    @media screen and (min-width: 576px) and (max-width: 767px)
+      font-size: 1.2rem
+      padding-bottom: 15px
+
+    @media screen and (min-width: 992px) and (max-width: 1199px)
+      font-size: 1.2rem
+      padding-bottom: 15px
+.social
+  position: absolute
+  bottom: 32px
+  a
+    text-decoration: none
+    @media screen and (max-width: 360px)
+      bottom: 24px
+
+    @media screen and (min-width: 576px) and (max-width: 767px)
+      bottom: 24px
+
+    @media screen and (min-width: 992px) and (max-width: 1199px)
+      bottom: 24px
+
+  a
+      font-size: 1.2rem
+      color: rgba(0,0,0,.5)
+      padding-right: 6px
+      &:hover
+        color: rgba(0,0,0,.9)

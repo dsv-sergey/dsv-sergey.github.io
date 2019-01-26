@@ -1,0 +1,127 @@
+@import "variables"
+  
+#services
+  height: 1616px
+  min-width: 1440px
+  background: $ourServices_bg
+  box-sizing: border-box
+  .services_content
+    grid-template-rows: 1fr 1fr 1fr
+    grid-template-columns: 41% 18% 41%
+    grid-column-gap: 14px
+    grid-row-gap: 14px
+    .services_content_wrap
+      position: relative
+      box-sizing: border-box
+      height: 400px
+      padding: 140px 10% 30px 10%
+      background: rgba(0,0,0,.6)
+      &:hover
+        background: rgba(0,0,0,.7)
+        box-shadow: 0 4px 10px rgba(0,0,0,.4)
+      @media screen and (max-width: 767px)
+        padding-top: 100px
+      @media screen and (max-width: 575px)
+        padding: 40px
+    .services_content_h3_title
+      font-family: MerriweatherBold ,serif
+      font-weight: bold
+      font-size: 1.5rem
+      color: #fff
+      text-transform: uppercase
+      padding-top: 20px
+
+    p
+      font-family: "RalewayRegular", sans-serif
+      font-size: 1rem
+      letter-spacing: 0.06em
+      line-height: 2rem
+      color: #fff
+      padding-top: 15px
+      padding-bottom: 35px
+      margin-bottom: 0
+    .know_more
+      position: absolute
+      width: 60%
+      bottom: 60px
+      border: none
+      text-align: left
+      font-family: $content-font
+      text-transform: uppercase
+      color: rgba(249,249,249,.90)
+      background: url(../images/our-services/more_accent.png) no-repeat -100px center
+      @media screen and (max-width: 575px)
+        bottom: 45px
+      &:hover
+        text-decoration: none
+        background: url(../images/our-services/more_accent.png) no-repeat 120px center
+        color: $main_color
+        -webkit-transition: all .3s
+        -moz-transition: all .3s
+        -o-transition: all .3s
+        transition: all .3s
+      &:active
+        background: url(../images/our-services/more_accent.png) no-repeat 200% center
+        -webkit-transition: all .5s
+        -moz-transition: all .5s
+        -o-transition: all .5s
+        transition: all .5s
+      &:active, &:visited, &:focus
+        text-decoration: none
+
+
+
+
+
+
+
+
+.services_content_1
+  background: url("../images/our-services/home_dietitian_sectionbg_1.png") no-repeat
+  background-size: cover
+  height: 400px
+  grid-row: 1
+  grid-column-start: 1
+  grid-column-end: 3
+
+.services_content_2
+  background: url("../images/our-services/img-9.png") no-repeat
+  background-size: cover
+  height: 400px
+  grid-row: 1
+  grid-column-start: 3
+  grid-column-end: 4
+
+.services_content_3
+  background: url("../images/our-services/griego3_1x.png") no-repeat
+  background-size: cover
+  height: 400px
+  grid-row: 2
+  grid-column-start: 1
+  grid-column-end: 3
+
+.services_content_4
+  background: url("../images/our-services/careers-00.png") no-repeat
+  background-size: cover
+  height: 400px
+  grid-row: 2
+  grid-column-start: 3
+  grid-column-end: 4
+
+.services_content_5
+  background: url("../images/our-services/griego4_1x.png") no-repeat
+  background-size: cover
+  height: 400px
+  grid-row: 3
+  grid-column-start: 1
+  grid-column-end: 2
+
+.services_content_6
+  background: url("../images/our-services/blog-3.png") no-repeat
+  background-size: cover
+  height: 400px
+  grid-row: 3
+  grid-column-start: 2
+  grid-column-end: 4
+
+
