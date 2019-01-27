@@ -21,9 +21,12 @@
   "homepage": "https://github.com/dsv-sergey/shopno#readme",
   "dependencies": {
     "@babel/core": "^7.2.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^4.2.1",
     "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.26.3",
+    "browserify": "^16.2.3",
     "del": "^3.0.0",
     "graceful-fs": "^4.1.11",
     "gulp": "^4.0.0",

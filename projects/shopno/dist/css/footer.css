@@ -1,0 +1,129 @@
+#footer {
+  height: auto;
+  min-width: 1440px; }
+
+.footer_head {
+  height: auto;
+  background: url(../images/background/Bgcp4.png) no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover; }
+  .footer_head .container {
+    grid-template-columns: 55% auto;
+    grid-column-gap: 30px; }
+
+.forms, .address {
+  min-height: 470px;
+  background: rgba(2, 22, 35, 0.7);
+  padding: 25px; }
+
+.wrap_forms, .wrap_address {
+  padding: 120px 0; }
+  .wrap_forms form, .wrap_address form {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    .wrap_forms form input:not(.send), .wrap_forms form textarea, .wrap_address form input:not(.send), .wrap_address form textarea {
+      border: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 0;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-family: "RalewayRegular", sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.5em;
+      color: rgba(255, 255, 255, 0.6); }
+      .wrap_forms form input:not(.send)::-moz-placeholder, .wrap_forms form textarea::-moz-placeholder, .wrap_address form input:not(.send)::-moz-placeholder, .wrap_address form textarea::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.6); }
+      .wrap_forms form input:not(.send)::-webkit-input-placeholder, .wrap_forms form textarea::-webkit-input-placeholder, .wrap_address form input:not(.send)::-webkit-input-placeholder, .wrap_address form textarea::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.6); }
+      .wrap_forms form input:not(.send):focus, .wrap_forms form textarea:focus, .wrap_address form input:not(.send):focus, .wrap_address form textarea:focus {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.6); }
+    .wrap_forms form .send, .wrap_address form .send {
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: 'RalewayMedium', serif;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      letter-spacing: 0.15em;
+      color: rgba(0, 0, 0, 0.7);
+      background-color: #6ff6eb;
+      border: none;
+      -webkit-border-radius: 5px;
+              border-radius: 5px;
+      padding: 18px 30px 16px 30px;
+      bottom: 28px;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      .wrap_forms form .send:hover, .wrap_address form .send:hover {
+        -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.35);
+                box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.35); }
+      .wrap_forms form .send:active, .wrap_address form .send:active {
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35);
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35); }
+
+.address {
+  font-family: "RalewayRegular", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  color: rgba(255, 255, 255, 0.6); }
+  .address p {
+    margin: 0; }
+  .address iframe {
+    width: 100%;
+    min-height: 220px;
+    padding-top: 20px; }
+
+.followWrap {
+  height: auto;
+  background: #262b2e; }
+  .followWrap .follow {
+    text-align: center;
+    padding: 90px 0; }
+    .followWrap .follow p {
+      font-family: 'RalewayMedium', serif;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: rgba(255, 255, 255, 0.4); }
+      .followWrap .follow p:first-child {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        color: rgba(255, 255, 255, 0.8); }
+    @media screen and (max-width: 575px) {
+      .followWrap .follow {
+        padding: 50px 0; }
+        .followWrap .follow p {
+          font-size: 1.4rem; }
+          .followWrap .follow p:first-child {
+            font-size: 1.6rem; } }
+  .followWrap .social_ftr {
+    margin-top: 14px;
+    margin-bottom: 32px; }
+    .followWrap .social_ftr a {
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      min-width: 46px;
+      height: 40px;
+      margin: 0 4px;
+      background-color: rgba(138, 138, 138, 0.4);
+      color: #faf4f4;
+      text-decoration: none; }
+      .followWrap .social_ftr a:hover {
+        text-decoration: none;
+        background-color: #6ff6eb;
+        color: #262b2e; }

@@ -1,0 +1,172 @@
+#comments {
+  height: 923px;
+  background: #f9fbfb;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 1440px; }
+  #comments .grid {
+    grid-template-columns: 40% 80px auto; }
+  #comments .owl-carousel {
+    overflow: visible; }
+    #comments .owl-carousel .item .comments_carousel_text_content {
+      min-height: 340px;
+      text-align: center;
+      padding-top: 100px;
+      padding-left: 40px;
+      padding-right: 40px;
+      background-color: #eff0f2;
+      font-family: "RalewayRegular", sans-serif;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      letter-spacing: 0.06rem;
+      color: rgba(0, 0, 0, 0.7); }
+      @media screen and (max-width: 1199px) {
+        #comments .owl-carousel .item .comments_carousel_text_content {
+          min-height: 264px;
+          padding: 40px; } }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        #comments .owl-carousel .item .comments_carousel_text_content {
+          min-height: 201px;
+          padding: 30px;
+          font-size: 1.3rem;
+          line-height: 1.9rem;
+          margin: 15px 0 15px 15px; } }
+      @media screen and (max-width: 767px) {
+        #comments .owl-carousel .item .comments_carousel_text_content {
+          margin: 0;
+          min-height: 200px; } }
+      #comments .owl-carousel .item .comments_carousel_text_content div {
+        margin-bottom: 0; }
+      #comments .owl-carousel .item .comments_carousel_text_content .comment_star {
+        padding-top: 20px;
+        color: #f2da3b; }
+        @media screen and (max-width: 1199px) {
+          #comments .owl-carousel .item .comments_carousel_text_content .comment_star {
+            padding-top: 12px; } }
+        @media screen and (max-width: 991px) {
+          #comments .owl-carousel .item .comments_carousel_text_content .comment_star {
+            padding-top: 15px; } }
+      #comments .owl-carousel .item .comments_carousel_text_content h3 {
+        font-family: 'MerriweatherBold', serif;
+        font-size: 1.4rem;
+        letter-spacing: 0.06em;
+        color: rgba(39, 39, 39, 0.95);
+        padding-bottom: 20px;
+        margin-bottom: 0; }
+        @media screen and (max-width: 991px) {
+          #comments .owl-carousel .item .comments_carousel_text_content h3 {
+            font-size: 1.4rem;
+            padding-bottom: 10px; } }
+        #comments .owl-carousel .item .comments_carousel_text_content h3 span {
+          font-family: 'MerriweatherRegular', serif;
+          font-style: italic;
+          font-size: 1.2rem;
+          letter-spacing: 0.03em;
+          color: rgba(118, 121, 120, 0.95); }
+          @media screen and (max-width: 991px) {
+            #comments .owl-carousel .item .comments_carousel_text_content h3 span {
+              font-size: 1.2rem; } }
+    #comments .owl-carousel .item .pic {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: relative; }
+      #comments .owl-carousel .item .pic span {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        #comments .owl-carousel .item .pic span:after {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: -1;
+          margin: 0;
+          width: 100%;
+          top: 25px;
+          bottom: 25px;
+          left: 0;
+          right: 0;
+          background-color: #eff0f2; }
+          @media screen and (min-width: 768px) and (max-width: 991px) {
+            #comments .owl-carousel .item .pic span:after {
+              top: 15px;
+              bottom: 15px; } }
+        #comments .owl-carousel .item .pic span img {
+          height: 100%;
+          padding: auto;
+          -webkit-box-shadow: 0 0 20px rgba(20, 20, 20, 0.2);
+                  box-shadow: 0 0 20px rgba(20, 20, 20, 0.2); }
+  #comments .owl-theme .owl-dots {
+    margin-top: 10px; }
+    @media screen and (min-width: 768px) {
+      #comments .owl-theme .owl-dots {
+        width: 40%; } }
+    #comments .owl-theme .owl-dots .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 3px;
+      cursor: pointer;
+      background-color: #d0d0d0;
+      border: none;
+      -webkit-border-radius: 4px;
+              border-radius: 4px; }
+    #comments .owl-theme .owl-dots .owl-dot span:hover {
+      background-color: #6ff6eb; }
+    #comments .owl-theme .owl-dots .active span {
+      background-color: #6ff6eb !important; }
+  #comments .owl-theme .owl-nav {
+    position: relative;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: auto;
+    width: 135px;
+    z-index: 1; }
+    #comments .owl-theme .owl-nav .owl-prev {
+      position: absolute;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: block;
+      background: #fff url(../images/carousel/arrow_l.png) no-repeat center center;
+      -webkit-box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+              box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+      min-width: 53px;
+      width: 53px;
+      min-height: 53px; }
+      #comments .owl-theme .owl-nav .owl-prev:hover, #comments .owl-theme .owl-nav .owl-prev:focus {
+        background: #6ff6eb url(../images/carousel/arrow_2l.png) no-repeat center center; }
+    #comments .owl-theme .owl-nav .owl-next {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: block;
+      background: #fff url(../images/carousel/arrow_r.png) no-repeat center center;
+      -webkit-box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+              box-shadow: 0 8px 11px rgba(20, 20, 20, 0.07);
+      min-width: 53px;
+      width: 53px;
+      min-height: 53px; }
+      #comments .owl-theme .owl-nav .owl-next:hover, #comments .owl-theme .owl-nav .owl-next:focus {
+        background: #6ff6eb url(../images/carousel/arrow_2r.png) no-repeat center center; }
+
+.wrap_comments_text {
+  padding: 25px 0;
+  grid-column-start: 3;
+  grid-column-end: 4; }

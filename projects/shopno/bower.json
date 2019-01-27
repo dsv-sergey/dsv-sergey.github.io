@@ -1,0 +1,24 @@
+{
+  "name": "bower",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Derevyannik Sergey <dsv-sergey@mail.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dsv-sergey/dsv-sergey.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owl.carousel": "^2.3.4",
+    "jquery": "^3.3.1",
+    "normalize-scss": "^3.0.3",
+    "wow": "^1.1.2",
+    "animate-sass": "^0.8.2"
+  }
+}

@@ -1,0 +1,105 @@
+.icon-AudioPro {
+  background-image: url(../images/sprite.png);
+  background-position: -130px -60px;
+  width: 120px;
+  height: 60px; }
+
+.icon-Infinity {
+  background-image: url(../images/sprite.png);
+  background-position: 0 0;
+  width: 130px;
+  height: 60px; }
+
+.icon-Logo, .logo {
+  background-image: url(../images/sprite.png);
+  background-position: 0 -180px;
+  width: 113px;
+  height: 46px; }
+
+.icon-Menue {
+  background-image: url(../images/sprite.png);
+  background-position: -113px -180px;
+  width: 30px;
+  height: 21px; }
+
+.icon-RCO {
+  background-image: url(../images/sprite.png);
+  background-position: 0 -120px;
+  width: 120px;
+  height: 60px; }
+
+.icon-Sport {
+  background-image: url(../images/sprite.png);
+  background-position: 0 -60px;
+  width: 130px;
+  height: 60px; }
+
+.icon-Swan {
+  background-image: url(../images/sprite.png);
+  background-position: -120px -120px;
+  width: 120px;
+  height: 60px; }
+
+.icon-Swanser {
+  background-image: url(../images/sprite.png);
+  background-position: -130px 0;
+  width: 130px;
+  height: 60px; }
+
+header {
+  height: 806px;
+  min-width: 1440px;
+  background: #eff0f2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  header .container {
+    height: 100%;
+    padding-top: 64px;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 15% 30% 20% 35%; }
+
+.header_title {
+  justify-items: center;
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  align-self: flex-end;
+  font-family: Montserrat-Bold , sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: 1.2pt;
+  color: #505050;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 9px 10px rgba(0, 0, 0, 0.24); }
+  .header_title span {
+    background-color: #6ff6eb;
+    padding: 0 10px; }
+
+.logo {
+  grid-row: 1;
+  grid-column: 1; }
+
+.button {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: flex-end;
+  justify-self: center;
+  border: 2px solid #777879;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  width: 228px;
+  height: 49px;
+  text-align: center;
+  outline: none;
+  line-height: 2.6;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: Montserrat ,sans-serif;
+  color: #3c3c3d; }
+
+.juice {
+  grid-row: 4;
+  grid-column: 3; }
