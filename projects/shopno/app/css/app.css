@@ -5787,6 +5787,12 @@ body {
 .grid {
   display: grid; }
 
+*:active,
+*:hover,
+*:focus {
+  outline: 0;
+  outline-offset: 0; }
+
 .container {
   width: 1140px;
   margin: 0 auto; }
