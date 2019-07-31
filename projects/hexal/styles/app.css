@@ -1,0 +1,22 @@
+@import "./fonts.css";
+@import "./sprite.css";
+@import "./header.css";
+@import "./portfolio.css";
+@import "./about.css";
+@import "./contact.css";
+@import "./footer.css";
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+
+  visibility: hidden;
+}

@@ -1,0 +1,295 @@
+.portfolio {
+  position: relative;
+
+  box-sizing: border-box;
+  height: 808px;
+  padding: 13px 0;
+
+  background-color: rgb(255, 255, 255);
+}
+
+.portfolio--wrapper {
+  margin: 0 22px;
+}
+
+.portfolio--wrapper::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 30px;
+
+  width: 460px;
+  height: 1px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.portfolio--contaner {
+  box-sizing: border-box;
+}
+
+.portfolio--contaner::before {
+  content: "";
+  position: absolute;
+  bottom: 27px;
+  left: 33px;
+
+  width: 56px;
+  height: 6px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.portfolio--contaner::after {
+  content: "";
+  position: absolute;
+  bottom: 13px;
+  left: 30px;
+
+  width: 1080px;
+  height: 1px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.portfolio--wrapper::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  right: 30px;
+
+  width: 460px;
+  height: 1px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.hexagon--contaner {
+  padding: 88px 0 0 0;
+
+  grid-gap: 0 24px;
+  grid-template: repeat(3, 1fr) / repeat(10, 1fr);
+}
+
+.hexagon {
+  width: 200px;
+  height: 230px;
+  overflow: hidden;
+
+  -webkit-transform: rotate(120deg);
+     -moz-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+       -o-transform: rotate(120deg);
+          transform: rotate(120deg);
+  visibility: hidden;
+}
+
+.hexagon--layer1 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  -webkit-transform: rotate(120deg);
+     -moz-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+       -o-transform: rotate(120deg);
+          transform: rotate(120deg);
+  visibility: hidden;
+}
+
+.hexagon--layer2 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-size: 125%;
+  -webkit-transform: rotate(120deg);
+     -moz-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+       -o-transform: rotate(120deg);
+          transform: rotate(120deg);
+  visibility: visible;
+}
+
+.hexagon--left-top::after {
+  content: "";
+  position: absolute;
+  top: 161px;
+  left: 110px;
+
+  width: 1px;
+  height: 112px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.hexagon--left-bottom::after {
+  content: "";
+  position: absolute;
+  top: 535px;
+  left: 110px;
+
+  width: 1px;
+  height: 112px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.hexagon--top-right::after {
+  content: "";
+  position: absolute;
+  top: 161px;
+  right: 110px;
+
+  width: 1px;
+  height: 112px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.hexagon--right-bottom::after {
+  content: "";
+  position: absolute;
+  top: 535px;
+  right: 110px;
+
+  width: 1px;
+  height: 112px;
+
+  background-color: rgb(228, 233, 235);
+}
+
+.portfolio__item1 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_33.png");
+  background-position: left -27px top -14px;
+}
+
+.portfolio__item2 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_31.png");
+  background-position: left -25px top -12px;
+}
+
+.portfolio__item3 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_34.png");
+  background-position: left -24px top -9px;
+}
+
+.portfolio__item4 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_35.png");
+  background-position: left -25px top -21px;
+}
+
+.portfolio__item5 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_36.png");
+  background-position: left -25px top -16px;
+}
+
+.portfolio__item6 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_44.png");
+  background-position: left -25px top -16px;
+}
+
+.portfolio__item7 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_37.png");
+  background-position: left -24px top -10px;
+}
+
+.portfolio__item8 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_38.png");
+  background-position: left -22px top -10px;
+}
+
+.portfolio__item9 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_39.png");
+  background-position: left -26px top -15px;
+}
+
+.portfolio__item10 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_40.png");
+  background-position: left -25px top -8px;
+}
+
+.portfolio__item11 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_41.png");
+  background-position: left -25px top -8px;
+}
+
+.portfolio__item12 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_43.png");
+  background-position: left -24px top -8px;
+}
+
+.portfolio__item13 .hexagon--layer2 {
+  background-image: url("../assets/img/Layer_42.png");
+  background-position: left -12px top -7px;
+}
+
+.portfolio__item1 {
+  grid-area: 1 / 2 / 1 / span 2;
+}
+
+.portfolio__item2 {
+  grid-area: 1 / 4 / 1 / span 2;
+}
+
+.portfolio__item3 {
+  grid-area: 1 / 6 / 1 / span 2;
+}
+
+.portfolio__item4 {
+  grid-area: 1 / 8 / 1 / span 2;
+}
+
+.portfolio__item5 {
+  margin-top: -42px;
+
+  grid-area: 2 / 1 / 2 / span 2;
+}
+
+.portfolio__item6 {
+  margin-top: -42px;
+
+  grid-area: 2 / 3 / 2 / span 2;
+}
+
+.portfolio__item7 {
+  margin-top: -42px;
+
+  grid-area: 2 / 5 / 2 / span 2;
+}
+
+.portfolio__item8 {
+  margin-top: -42px;
+
+  grid-area: 2 / 7 / 2 / span 2;
+}
+
+.portfolio__item9 {
+  margin-top: -42px;
+
+  grid-area: 2 / 9 / 2 / span 2;
+}
+
+.portfolio__item10 {
+  margin-top: -84px;
+
+  grid-area: 3 / 2 / 3 / span 2;
+}
+
+.portfolio__item11 {
+  margin-top: -84px;
+
+  grid-area: 3 / 4 / 3 / span 2;
+}
+
+.portfolio__item12 {
+  margin-top: -84px;
+
+  grid-area: 3 / 6 / 3 / span 2;
+}
+
+.portfolio__item13 {
+  margin-top: -84px;
+
+  grid-area: 3 / 8 / 3 / span 2;
+}

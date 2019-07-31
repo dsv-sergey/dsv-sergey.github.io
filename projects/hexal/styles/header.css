@@ -1,0 +1,80 @@
+.header {
+  position: relative;
+
+  height: 63px;
+
+  background-color: rgb(50, 50, 50);
+}
+
+.header:after {
+  content: "";
+  position: absolute;
+  top: 63px;
+  left: 50%;
+  z-index: 10;
+
+  width: 0;
+  height: 0;
+
+  border-top: 30px solid rgb(50, 50, 50);
+  border-right: 52px solid transparent;
+  border-left: 52px solid transparent;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.logo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  width: 64px;
+  height: 55px;
+
+  -webkit-transform: translateX(-50%) scale(1.1);
+     -moz-transform: translateX(-50%) scale(1.1);
+      -ms-transform: translateX(-50%) scale(1.1);
+       -o-transform: translateX(-50%) scale(1.1);
+          transform: translateX(-50%) scale(1.1);
+}
+
+.grid {
+  display: grid;
+}
+
+.navigation {
+  padding: 30px 350px 0 365px;
+
+  grid-template-columns: 74px 13px 50px 148px 40px 15px 80px;
+}
+
+.navigation a {
+  font-size: 10px;
+  font-family: "Lato Bold";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+
+  -moz-text-decoration-line: none;
+       text-decoration-line: none;
+}
+
+.navigation a:hover {
+  color: rgb(46, 179, 152);
+}
+
+.navigation span {
+  font-size: 10px;
+  color: rgb(255, 255, 255);
+
+  border-color: rgb(255, 255, 255);
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px;
+
+      -ms-border-radius: 1px;
+       -o-border-radius: 1px;
+}

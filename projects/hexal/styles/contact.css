@@ -1,0 +1,186 @@
+.contact {
+  box-sizing: border-box;
+  height: 632px;
+  padding-top: 15px;
+
+  background-color: rgb(50, 50, 50);
+}
+
+.contact--wrapper {
+  min-height: 602px;
+  margin: 0 35px 0;
+
+  border-top: 1px solid rgb(43, 43, 43);
+  border-bottom: 1px solid rgb(43, 43, 43);
+}
+
+.contact--container {
+  margin: 54px 98px;
+
+  grid-template-columns: auto auto;
+  grid-template-rows: 32px auto;
+}
+
+.contact__title {
+  font-size: 32px;
+  font-family: "Maven Pro Regular";
+  color: rgb(224, 224, 224);
+  letter-spacing: 0.8px;
+
+  grid-column: 1 / span 2;
+}
+
+.contact__form {
+  width: 650px;
+}
+
+.form__title {
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: "Maven Pro Regular";
+  color: rgb(190, 190, 190);
+  letter-spacing: 1px;
+}
+
+.form__name,
+.form__email,
+.form__subject,
+.form__message,
+.form__name::placeholder,
+.form__email::placeholder,
+.form__subject::placeholder,
+.form__message::placeholder {
+  display: block;
+  width: 650px;
+
+  font-size: 13px;
+  font-family: "Lato";
+  color: rgb(224, 224, 224);
+  text-indent: 15px;
+
+  background-color: rgb(69, 69, 69);
+  border: none;
+}
+
+.form__name:-webkit-autofill,
+.form__email:-webkit-autofill,
+.form__subject:-webkit-autofill,
+.form__message:-webkit-autofill {
+  box-shadow: inset  0 1px 4px 0 rgb(69, 69, 69), /* Внутренняя тень */
+  inset 0 0 0 50px rgb(69, 69, 69), /* Цвет фона */
+  0 1px rgb(69, 69, 69) !important; /* Наружная тень */
+
+  -webkit-text-fill-color: rgb(224, 224, 224) !important;
+}
+
+.form__name:focus,
+.form__email:focus,
+.form__subject:focus,
+.form__message:focus {
+  outline: none;
+}
+
+.form__name,
+.form__email,
+.form__subject {
+  height: 40px;
+  margin-bottom: 18px;
+}
+
+.form__message {
+  box-sizing: border-box;
+  height: 168px;
+  margin-top: 20px;
+
+  line-height: 2.6;
+}
+
+.form__send {
+  display: block;
+  align-items: flex-end;
+  box-sizing: border-box;
+  width: 100px;
+  height: 40px;
+  margin: 18px 0 0 auto;
+
+  font-size: 12px;
+  font-family: "Lato";
+  color: rgb(215, 252, 245);
+
+  background-color: rgb(46, 179, 152);
+  border: none;
+  outline: none;
+}
+
+.form__send:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.form__send:active {
+  box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.contact__adress {
+  margin: 41px auto auto 20px;
+}
+
+.adress__text {
+  padding-left: 2px;
+
+  font-size: 12px;
+  line-height: 2;
+  font-family: "Lato";
+  color: rgb( 224, 224, 224 );
+  letter-spacing: 1.1px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.adress__text strong {
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+
+.adress__geo {
+  margin: 42px auto auto 5px;
+}
+
+.geo__link {
+  padding-left: 12px;
+
+  font-size: 13px;
+  font-family: "Lato";
+  color: rgb( 190, 190, 190 );
+  text-decoration: none;
+  letter-spacing: 0.1px;
+}
+
+.adress__phone {
+  margin: 8px auto auto 3px;
+}
+
+.phone__link {
+  padding-left: 11px;
+
+  font-size: 13px;
+  font-family: "Lato";
+  color: rgb( 190, 190, 190 );
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+.adress__mail {
+  margin: 8px auto auto 2px;
+}
+
+.mail__link {
+  padding-left: 11px;
+
+  font-size: 13px;
+  font-family: "Lato";
+  color: rgb( 190, 190, 190 );
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}

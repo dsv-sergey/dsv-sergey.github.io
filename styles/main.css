@@ -1,21 +1,24 @@
-body {
+.body {
     background-color: #412F2F;
     background-image: linear-gradient(160deg,#412F2F 15%, #6B2686 85%);
 }
-section {
-    background-image: linear-gradient(10deg,#ade0ee 20%, #5471B9 80%);
-    border: 3px solid rgb(75, 68, 68);
-    border-radius: 20px;
-    width: 80%;
-    margin: auto;
-}
-h1 {
+
+.header {
     text-align: center;
     font-size: 3.5rem;
     font-weight: 900;
     color: #fff;
     margin: 3rem;
 }
+
+.main {
+    background-image: linear-gradient(10deg,#ade0ee 20%, #5471B9 80%);
+    border: 3px solid rgb(75, 68, 68);
+    border-radius: 20px;
+    width: 80%;
+    margin: auto;
+}
+
 .wrapper {
     background-color: #f29c54;
     background-image: linear-gradient(45deg,#f29c54 0%, #DB4367 100%);
@@ -25,20 +28,20 @@ h1 {
     box-sizing: border-box;
     margin: auto;
 }
-a {
+.main_link {
     display: block;
     text-decoration: none;
     font-size: 3rem;
     font-weight: 800;
-    margin: 3rem;
+    margin: 1rem;
     color:#fff;
 }
 @media screen and (max-width:800px) {
-    section {
+    .main {
         border-radius: 16px;
         width: 90%;
     }
-    h1 {
+    .header {
         font-size: 2.5rem;
         font-weight: 700;
         margin: 1.5rem;
@@ -46,28 +49,30 @@ a {
     .wrapper {
         border-radius: 13px;
     }
-    a {
+    .main_link {
         font-size: 2rem;
         font-weight: 700;
-        margin: 2rem;
     }
 }
 @media screen and (max-width:400px) {
-    section {
+    .main {
         border-radius: 12px;
         width: 95%;
     }
-    h1 {
+    .header {
         font-size: 2rem;
         font-weight: 700;
         margin: 1rem;
     }
     .wrapper {
         border-radius: 10px;
-    }
-    a {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+    .main_link {
         font-size: 1.6rem;
         font-weight: 600;
-        margin: 1rem;
     }
 }

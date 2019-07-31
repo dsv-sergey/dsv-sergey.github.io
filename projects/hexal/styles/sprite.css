@@ -1,0 +1,70 @@
+.sprite {
+  display: inline-block;
+
+  vertical-align: middle;
+}
+.sprite {
+  background-image: url("../assets/img/62524f0dfe55ac1e3ae29a22d34cae7c.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.sprite.Dribbble--png {
+  width: 24px;
+  height: 24px;
+
+  background-position: 0 0;
+}
+.sprite.Facebook--png {
+  width: 25px;
+  height: 24px;
+
+  background-position: 0 -25px;
+}
+.sprite.Google--png {
+  width: 25px;
+  height: 24px;
+
+  background-position: 0 -50px;
+}
+.sprite.Linkedin--png {
+  width: 25px;
+  height: 24px;
+
+  background-position: 0 -75px;
+}
+.sprite.location--png {
+  width: 7px;
+  height: 11px;
+
+  background-position: 0 -100px;
+}
+.sprite.Logo--png {
+  width: 64px;
+  height: 55px;
+
+  background-position: 0 -112px;
+}
+.sprite.mail--png {
+  width: 13px;
+  height: 8px;
+
+  background-position: 0 -168px;
+}
+.sprite.phone--png {
+  width: 11px;
+  height: 11px;
+
+  background-position: 0 -177px;
+}
+.sprite.Pinterest--png {
+  width: 24px;
+  height: 24px;
+
+  background-position: 0 -189px;
+}
+.sprite.Twitter--png {
+  width: 24px;
+  height: 24px;
+
+  background-position: 0 -214px;
+}
